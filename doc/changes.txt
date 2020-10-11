@@ -1,0 +1,1899 @@
+Changelog for OpenGUI (formerly FastGL)
+=====================
+
+0.99z2 released January 1999
+---------------------------
+
+First official release
+
+0.99z3 released February 1999
+----------------------------
+
+* Add class SlideBarH()
+* Update example 'Colors' for using class 'SliderBarH'
+* Add WINDOWMOVEEVENT
+* fix bug in ListBox::SetToItem(int);
+* improve EditBox range checking
+* MenuWindow::AddMenu() has new height (18 => 16)
+* __dpmi_free_ldt_selector() add to MS-DOS code
+* some minor bug fixes
+* improve example 'bitmaps' to small size (minus 308KB)
+* fix error in ~Control();
+
+0.99z4 released 15 February 1999
+-------------------------------
+
+* Small bug in xxxxxDRAGEVENT for non window sending fixed
+* Bug fixes in min,max argument of Slidebar class
+* Bug fix in MoveIn::* & MoveOut::* methods
+* Add method: static void App::DisableSwitching(void);
+	      static void App::EnableSwitching(void);
+* Improve using WSIZEABLE flags in WindowDatabase class
+* Small bug in WindowResize fixed
+
+0.99z5 released March 1999
+--------------------------
+
+* Bug fix in text_out() procedure - math exception (MMX switching)
+4;5~* Change prototype for: Config::ReadInt(char *, int *) to Config::ReadInt(char *, int &)
+*                       Config::ReadDouble(char *, double *) to Config::ReadInt(char *, double &)
+* Improve linux keyboard routine with svgalib call: keyboard_clearstate();
+
+0.99z6 release 20 March 1999
+-------------------------
+
+* Improve Window::WindowUnLock();
+* Add method BaseGui::SetColors(void) - these bit of code is usefull to settings
+  fcolor & bcolor with object default (using with printf etc., to set proper colors )
+* Add param ink & paper to FileDialog constructor: FileDialog(void (*filesel)(char *), char *dir, char *flt, char *namewnd, int m, int ink, int paper);
+* Add methods 'void Basegui::SetParam(int)' and 'int BaseGui::GetParam(void);'
+  one allows calling Widgets and Windows proc with single param
+  (one procedure for more windows etc ...)
+* Add transparency for text_out() & WindowText() - set_ppop(_GTRANSP);
+* Add transparent blitting for put_block() & WindowPutBitmap() - set_ppop(_GTRANSP);
+* Replace fill_rect(w,h,x,y) with fill_box(x,y,w,h);
+* Replace draw_rect(w,h,x,y) with draw_box(x,y,w,h);
+
+0.99z7 release 7 April 1999
+-------------------------
+
+* Add node 'debug' to makefile (LINUX) for building a debug version (fgld)
+  of library - static only - "make -f makefile.lin debug" to do one
+* Little visual improvement in MenuWindow class
+* Bug fix in Window::Context() when no windows exist in the system
+* Bug fix in Window::Context() when Window::current is NULL
+* Improve draw_hline to check for max size
+* Bug fix in transparency when dest==0 and improve speed of one
+* Add new examples "3dcubes" based on the allegro library and 3dmath support from one
+* A new Pentium II optimized code for transparency (in RAM)
+* rename the utility bmp2asm to file2asm by Alain Rouge.
+  Note! we add to the start of assembled file the size of original one
+
+0.99z8 release 14 April 1999
+-------------------------
+
+* fix a stupid mistake in engine.asm
+* fix draw_hline for maximal width==X_width
+* fix a hard bug in super ultra optimized TRANSP routine
+* add user procedures in the interupt: int RegisterJob(Widget);
+* add the nVidia RIVA detection
+* add the palette fade out at exit
+* add void Window::WindowGetWorkRect(int& x,int& y,int& w,int& h);
+* change the mouse cursor range in MS-DOS code
+
+0.99z9 release 29 April 1999
+-------------------------
+
+* add method ListBox::Test(int mousex, mousey), its return a number of clicked
+  item in the List or -1 if missed.
+* add new fonts: FONT0406, FONT1220 and FONT1625 (but for codes 0x20 .. 0x7e only)
+* extracting internal declarations to no public _fastgl.h
+
+0.99z10 release 4 may 1999
+-------------------------
+
+* new feature - flag APP_ROOTWINDOW in App::App()
+  new method App::GetRootWindow(void) to get pointer at screen
+  see the example 'primitiv'
+
+0.99z11 release 10 may 1999
+-------------------------
+
+* add method PushButton::ChangeItem(int *)
+* add method CheckButton::ChangeItem(int *)
+* many internal improvents for compatibility with "OpenGUI Sourcer" utility
+* fix bug in ListBox::Resize()
+
+0.99z12 release 17 may 1999
+-------------------------
+
+* add static method GuiEvent::SetDragShape(void(*)(int,int,int,int))
+* add new events: STARTDRAGLEFTEVENT, STARTDRAGRIGHTEVENT
+* add feature to the EditBcx class - the size of input string can be
+  greater than physical size of input box. Initially is size set to the
+  width of input box in  chars. After initialization you can change the
+  size to value from 1 to 127.
+* add MATROX MGA series support
+* add PERMEDIA 2 support
+
+##########    FIRST RELEASE WITH ENGLISH DOC    #########################
+
+1.20 release 10 JUNE 1999
+-------------------------
+
+* add method "int Control::GetLocalId()"
+* rename Control::GetPushed() to Control::GetLastActive()
+* add data member "Control *accel;" to GuiEvent class
+* improve FileDialog window
+* first look at linux framebuffer (still not usable)
+* Color scheme for windows and other
+* change max. text string size from 128 to 256 chars (for text output fnc)
+* add example 'editor'
+* fix problem with the name of the configuration variables started with '_' char
+* OpenGUI Sourcer
+* add trying other VESA modes if needed
+* fix bug in PERMEDIA paging
+
+1.21 release 17 JUNE 1999
+-------------------------
+
+* bug fix for BUTTONHOLDEVENT
+* bug fix for FileDialog widget (UP & DOWN BUTTONS don't work properly)
+* new email: nezmar@internet.alcatel.sk
+* s3 chipset detection improvement
+* global 'Config * Config::cfg' has been moved to 'Config * Config::cCfg'
+* Add class SlideBarV()
+* add 3DFX BANSHEE support
+* add INTEL I740 support
+
+1.22 release 11 JULY 1999
+-------------------------
+
+* improved detection of RIVA TNT (TNT2?) cards
+* WindowXY.db renamed to windowxy.db
+* add members 'menu_fore_active' and 'menu_bg_active' to CScheme class
+* many bugfixes in editor.cc
+* general make file
+* bug fix for Cirrus Logic chipset
+* speed up card detections
+* * new universal makefile *
+* command line parameters change:
+* 	'-v' -> '-verbose'
+* 	'-d' -> '-driver'
+* 	'-r' -> '-resolution'
+
+1.23 release 25 JULY 1999
+-------------------------
+
+* add FlushInput() call to Window::~Window() :-)
+* add WCENTRED flag for Window constructor, it draws Window at the center
+  of screen
+* add defines for keys ALT_A .. ALT_Z
+* add OpenGUI.FAQ file - it is empty on now :-}
+* some updates for OpenGUI Sourcer (current ver. is 1.32)
+* ??? bug in WindowUpdate ????
+* added support for RLE8 compressed bitmap on loading from file (no)
+  for in-image compiled bitmaps
+* I am starting to port to OFBIS linux frame buffer library (alternative
+  to svgalib) - it is unusable still!
+* improved for compiling under egcs & QNX (it runs, but you must
+  set privity=0)
+* next release will be great
+
+1.29 pre-release 29 July 1999
+-------------------------
+
+* color palette code rewrite
+* linux framebuffer beta support
+
+1.40beta1 release 01 Sep 1999
+-------------------------
+
+* cca. 72 KB of new code
+* new linux keyboard driver
+* new linux mouse wrapper (gpm -t ms -R SystemxMouse)
+* now you must link your application with '-ldl', not with '-lvga'
+* realy *dynamic* linking with SVGALIB if no FRAMEBUFFER is present
+* new switch -svga to force SVGALIB routines rather than FRAMEBUFFER (LINUX only)
+
+1.40beta2 release 02 Sep 1999
+-------------------------
+
+* FRAMEBUFFER job has been finalized !!!
+* verbose is *realy* verbose
+* if you add to link libraries in the makefile '-lstdc++', then you get smallest
+  executable about 30 KB! Why, I don't know.
+* great improvement in CPU utilization when keyboard & mouse pooling (only
+  for *REAL* operating systems (QNX and LINUX))
+* fix bug for DOS and linux SVGA target compiling
+* fix bug in gpm deamon executing
+* add defines for keys CTRL_A .. CTRL_Z .. CTRL_F01 .. ALT_UP .. and more
+* add function cleanup() for properly screen, keyboard and mouse restoring
+  you can use this if you can switch to text console mode. This function is
+  called automatically at exit, that you can't call one normally.
+
+1.40 release 08 Sep 1999
+-------------------------
+
+WARNING: I have downloaded & tested a new version of SVGALIB 1.40 and I have
+problems with one, namely with console switching and stability! I suggest
+that you may stay with an old version 1.31, or better switch to linux 2.2.x
+FRAMEBUFFER.
+
+* fix bug when 'userevent' server isn't found on QNX OS
+* fix bug in QNX keyboard handling when application crashed
+* fix reentrancy bug in cleanup()
+* add defines for graph modes: GTEXT, G320x200, G640x480 .. G1600x1200
+* linux: the '-ldl' parameter for gcc is needed for static linking only!
+
+1.41 release 13 Sep 1999
+-------------------------
+
+* fix bug in CTRL+TAB key handling
+* fix bug in framebuffer mouse [gpm] - co-ordinates calculating
+* add support for frame buffer monitor timings (/etc/fb.modes)
+* some minor improvements
+* some documentation improvements
+
+1.42 release 14 Sep 1999
+-------------------------
+
+* FileDialog::reload improvements
+* fix trivial bug in linux.cc (variable fb_modename not found)
+* add flag for Window class: WESCAPE - delete window when ESC key pressed
+* updated OpenGUI Sourcer ver. 2.0 -> directory 'rad2'
+* new face for font: FONT0808
+
+1.43 release 21 Sep 1999
+-------------------------
+
+* FileDialog::fileselect callback procedure prototype added:
+  'void (*)(char *)' or 'void (*)(char *s, FileDialog *)' is possible now
+* add new widget class 'TextEditor':
+  TextEditor::TextEditor(TextEditor **to_me, char *filename, int font);
+  TextEditor::Close(void);
+  TextEditor::OpenBuffer(char *filename);
+  TextEditor::SaveBuffer(void);
+  TextEditor::SaveAsBuffer(char *filename);
+  TextEditor::NewBuffer(void);
+  TextEditor::Goto(int);
+  TextEditor::ReadOnlyMode(void);
+* *all* configuration files are saved to HOMEDIR as hidden !
+* add support for #pragma interface/implementation. Theses pragmas reduce size
+  of object/executable files up to 50% (normally 30%), because this reduce
+  unused debug info and inline stuff!
+
+1.44 release 23 Sep 1999
+-------------------------
+
+* PrtScr key work again (under linux)
+* improvement in makefile for linux
+* file with window sizes & placements is moved from 'windowxy.db'
+  to '~/.windowxy.wdb'
+* add command line parameter '-safe' (no detection, video mode 640x480,
+  no Window Database used, disable MMX)
+
+1.45 release 26 Sep 1999
+-------------------------
+* removed dependency on SVGALIB header files
+* add #pragma library for Watcom C++, now linker link your app implictly with
+  fgl.lib
+* add void App::BroadcastMessage(GuiEvent *)  - this you allow send one message to
+  all windows
+* fix some minor memory leaks
+* fix self ptr mechanism in ~TextEditor();
+* many improvements to OpenGUI Sourcer
+* fix minor bug in Window::SetName();
+* fix bug in PointButton::draw() when disabled
+* fix many minor bugs in Bitmap code
+
+1.46 release 29 Sep 1999
+-------------------------
+* add Control::SetHandler();
+* bitmaped version of PushButton() no delete bitmap in destructor now !!!
+* many improvements to OpenGUI Sourcer - for few days, its will be great TOOL !!
+* remove dependancy on 'sys/io.h' for compat. with libc (thanx to David Martin)
+* some speed improvements for Window drawing
+* add new ListBox constructor (+14 pixels in width)
+* fix some quirks in SlideBar's
+
+1.50 release 6 Oct 1999
+-------------------------
+* FIRST OF ALL: when you try compile your old applications with this version,
+  you GET a tons of error messages. Don't worry, it is wrong only at first
+  look. The 95% of all messages is bad prototype for your callback procedures
+  (this is all that is called when any CONTROLS is activated). You must replace
+  the 'void your_proc(void)' with 'void your_new_proc(CallBack)'. The good thing
+  is that you always get the pointer at instance of which CONTROLS called your
+  procedure.
+
+  If you have in your old sources explicitly call to destructructor of ListBox
+  or ProgressBar class, you must remove these lines. Objects are destroyed
+  automatically when Windows end up.
+
+  If you call in your code ListBox::draw() routine, you must change this line.
+  Methods has been renamed from 'draw()' to 'Draw()'.
+
+  And finally, all ListBox object has new size, all is bigger about 16 pixels
+  in width.
+
+  IF YOU DON'T WANT THIS NEW FEATURE, YOU CAN DISABLE IT WITH UNCOMMENT
+  FGL14_COMPAT DEFINES IN fastgl.h source and compile library again, but
+  EXAMPLES and RAD sources are coverted to run with ver. 1.50 and up.
+
+* ----------------------------------------------------------------------------
+
+* totally rewriten code for Sliders and ListBox. The class Listbox is now
+  inherited from Slider:Control:BaseGui. Now you not must destruct ListBox
+  explicitly. Each ListBox instance is now destroyed automatically when Window
+  end your life.
+* ProgressBar class is inherited from Control class. Do not use delete on this
+  object!
+* Window::Context() now returns pointer to previous current window
+* all callback on now has a new prototype:
+
+  void f(void);  is now  void f(CallBack);
+  typedef Control *CallBack;
+
+  All of these changes needs to edit your sources, replace all of callback
+  routines header with new (replace 'void' with 'CallBack' as parameter).
+  You must also remove *all* explicit delete on ListBox and ProgressBar
+  class instances!
+
+* add Window::AddProgressBar(x,y,w,h,steps);
+* add TextEditor::Reload(void) - reopen file
+* add arguments INK and PAPER to  TextEditor::TextEditor() ctor
+* fix some error in text editor (for handling ENTER, PGUP, PGDOWN keys)
+
+1.51 release 10 Oct 1999
+-------------------------
+* added basic CLIPBOARD, CTRL+INSERT copy to clipboard, INSERT to copy to line
+* click to other EditBox when one is already edited works properly now
+* remove absolete INPUTEVENT event type
+* pressing TAB key when you edit a line, move to the next EditBox (if exists)
+* many improvements to OpenGUI Sourcer
+* fix bug with ioperm() prototype
+* some estetic improvements to FileDialog class, files are sorted now, you can
+  use keys HOME, END, PGUP, PGDOWN, CTRL+PGUP for navigation in FileDialog Wind
+* added some descriptions of 'engine' routines to base.cc
+
+1.52 release 10 Oct 1999
+-------------------------
+* new C wrapper to remove 'engine.asm' - now you can compile with makefile.lin2
+  and you get no asm kernel version that you can compare speed with original.
+  This help for porting to other processors only. It run under linear
+  framebuffer or svgalib with -linear switch only. The name of the file
+  is 'kernel.cc'
+* updated examples
+* some minor bug fixes
+* many internal improvements and code cleanups
+
+1.53 release 14 Oct 1999
+-------------------------
+* fix stupid bug in font prepare procedure, all fonts works fine again
+* now all sources compile right with gcc 2.95 - ( I hope )
+* add usefull function App::Yield() - its make your code keyboard sensitive
+  when you call cpu intensive code without main loop GetUserEvent() calling.
+  Especially in linux, call to this method some few times per seconds, make
+  console switch or BREAK function goes right (examples is in main.cc - for
+  Window draw speed test).compile right with gcc 2.95 - ( I hope )
+* add usefull function App::Yield() - its make your code keyboard sensitive
+  when you call cpu intensive code without main loop GetUserEvent() calling.
+  Especially in linux, call to this method some few times per seconds, make
+  console switch or BREAK function goes right (examples is in main.cc - for
+  Window draw speed test).
+* fix bug in TextEditor Widgets when CTRL+Y is used - DTOR causes GPF
+* fix error in FileDialog filename sort
+* fix minor bug in EditBox::draw(int);
+* add feature for input strings with spaces at end - now is it possibly
+  by enter '"' as last char - quotes will be removed and you get string
+  with apropriate space at end
+* keys KUP and KDOWN terminate opened input line
+* fix minor bug in ListBox CTOR
+* new feature - if you use as accelerator key keys with ALT_ prefixes
+  apropriate char in accel name will be underscored with RED line
+* TextEditor is ALT+F4 positive again
+
+1.54 release 23 Oct 1999
+-------------------------
+* add Control::Label class - its simple text label
+* fix bug with come const methods - bad redrawing of Buttons
+* some linear mode routine optimizations - up to 30%
+
+1.55 release 28 Oct 1999
+-------------------------
+* fix stupid GPF in EditBox handlers
+* some cleanup for feature - with 32 bit modes
+* improvement to 'textto' text converting utility
+* initial improvements for TRUE 32 bit color modes - if you want see
+  TRUE COLORS (linux only) uncomment TRUE_COLORS macro in base.h
+  and compile all sources with: make -f makefile.li2
+* remove absolete code for older (1.46) version
+* fix detection of RIVA TNT with vendor id 0x10de (standard is 0x12d2)
+* add support for for RIVA TNT
+* add support for hexadecimal input - EditBox::HexMode(bool);
+
+1.60 release 18 Nov 1999
+-------------------------------
+
+NOTE! IF YOU WANT TRUECOLORS, YOU MUST DEFINE MACRO 'TRUE_COLORS' FOR COMPILER
+      AND LINK YOUR CODE WITH FGL32 (NOT FGL!) LIBRARY!
+      DON'T FORGET BUILD LIBRARY WITH 'MAKEFILE.LI2'
+
+* improvements for compiling with new gcc 2.95.2
+* in-memory (compiled with file2asm & linked) bitmaps *MUST* be alligned
+  to 32 bit!!!
+* first official TRUE COLORS version - slow & memory heavy version in this case
+* fixed examples for TRUE COLORS
+* added new base class DrawBuffer (for Bitmap)
+* move int Bitmap::type from public to private - use GetType() methods
+* added 'int ListBox::DoListBox(int key)' methods
+* support for 24bit BMP files in true color modes - linux linear mode only
+  8-bit BMP are still supported in this mode, but for 1.60 final
+* added file 'targets.txt' for overview of supported compilers and targets
+* replace some 'Bitmap' class with the new 'DrawBuffer' class, these changes
+  saves 1086 bytes per each instance of DrawBuffer class
+* color managements has been rewrited/moved to base.cc
+* class ColorSystem has been removed
+* added support for MEMWATCH utility - use 'makefile.li1' and -DMEMWATCH switch
+  for all your sources
+* 'CreateColor(int,int,int);' isn't more supported
+  use 'CreateColor(int,int,int,-1);' instead
+* fixed memory leak in _FillPolygon()
+* fixed bug in ListBox position when size==0
+* revoke all privs for security
+* fixed bug in a mouse cursor background restoring
+* methods Bitmap->GetWREAL() has been removed - use GetW() instead !
+* improvements to file2asm utility - BMP files are prepared in compile time
+* fixed bug in ALT_x key in Controls:: under LINUX
+* WindowDatabase reflect app name now
+* added parameter SIZE to EditBox(char *)
+ constructor
+* added WALIGNED flags for windows
+* fixed bug for Bitmaps and GCC align
+* 8bit BMP files are accepted in 32M modes
+* fixed fonts 1,4,5 in TRUE COLORS
+* in-image bitmap now forks fine again
+* added REPAINTEVENT event
+* some minor improvements for examples
+
+1.61 release 25 Nov 1999
+-------------------------------
+* added filter for numeric data inputs
+* added new ColorDialog class
+* corrected draw_line algorithm
+* added long long _rdtsc() for your better code profiling - this fnc returns
+  number of processor clocks from start of your computer. You can print this:
+  printf("No. of clocks from start = %f\n", (double) _rdtsc()); GCC only!
+* fixed bug - for right mouse button in GPM client (FRAMEBUFFER ONLY)
+* added new FONT2034 - helvetica
+* fixed _GAND, _GOR, _GXOR and _GNOT for FRAMEBUFFER kernel
+* added newvox and galaxy examples
+
+1.70 release 30 Nov 1999
+-------------------------------
+* new window management - many times faster (500%) in window redrawing and
+  focus switching and half memory requirements from all previous versions :-)))
+* command line switch '-full' has been removed
+* command line switch '-nofull' has been added - to disable full redrawing
+* added new window flag WFASTMOVE to the disable for an individual window full
+  redraw on the move or resize
+* some code cleanups
+* added SetWindowMoveStyle(int) for override '-nofull' switch,
+  (arg=TRUE for full redrawing of window contents)
+* fixed bug in Snd() & Puk() - sound effects under linux
+* added int get_key(void) - for C code - returns key or NULL
+* alpha support for Mesa3D library (GNU OpenGL) - you must have installed
+  Mesa3D library in /usr/lib & /usr/include. See examples in examples/mesa3d
+  directory. NOTE: you must link X11, pthread libraries also. Linux only on now.
+  The library you make with 'make -f makefile.gl' command
+* added function 'int get_colordepth(void)' - returns 8 or 32
+  on now
+* fixed some cosmetic bug in CheckButton::Disable()
+
+1.71 release 1 Dec 1999
+-------------------------------
+* fixed some minor bugs in makefiles & examples
+* cosmetic improvements in ProgressBar class
+* fixed Watcom C++ compiling under MS DOS
+
+1.72 release 7 Dec 1999
+-------------------------------
+* fixed some FGLMesa3D glue problems
+* fixed delay() problem under linux
+* added window flag WNOTIFY for OK/CANCEL dialog on window close
+* added new event NOTIFYEVENT to correspond with with WNOTIFY flag
+* added int Window::ShowNotify() - see to editor.cc & fastgl.cc
+* added property 'change' to the Window class
+* kernel.cc:FGmemcpy() - workaround for GCC inline assembler bug!
+* fixed some (3) memory faults in the TextEditor class
+  and partially rewritted
+* some optimizations in the polygons routine
+* added the MASK feature to the Control class
+* added AddCheckButtonMask()
+* added AddPointButtonMask()
+* fixed small bug in the FileDialog class - not closed window on the 'OK' button
+* some addition in the RAD utility
+* fixed bug in Bitmap::BitmapSave() methods - no more big file
+* remove of absolete WSOLID window switch
+* added parameter size to ButtonGroup(int size) constructor
+* added ButtonGroup::Clear() methods to reset object
+
+1.73 release 14 Dec 1999
+-------------------------------
+* fixed some mismatches only
+* added savings for current ink, paper, font & ppop per each one windows
+* fixed a hard bug in gpm mouse driver!!! Many thanx to Rene George.
+* some addition in the RAD utility (ver. 2.72)
+* added methods Window::WindowShape(int x, int y, int w, int h)
+  set absolute window position & size
+* RESIZEEVENT is renamed to WINDOWRESIZEEVENT
+* added new event named 'ICONIZEEVENT' - key=0 for maximize, key=1 for minimize
+* added new constructor MenuWindow(int w, int h, char *title, GuiHwnd, int);
+  its position is derived from the last Menu item that you clicked
+* fixed overflow bug in the "C" draw_line algorithm
+
+1.74 release 22 Dec 1999
+-------------------------------
+* improvements for smooth redrawing in window resize routine
+* added Window::WindowIconize(void) methods
+* added Window::WindowIconize(int x, int y) methods
+* added Window::WindowAttachIcon(DrawBuffer *) methods
+* added int Window::IsIconized() methods for testing
+* fixed WindowMove() & WindowResize() with WALIGNED bug
+* the right mouse button is allowed to  switch the window focus
+* the icon position added to WindowDatabase
+* new examples for Mesa 3.0 - gears.c
+* examples 'bitmaps' & 'hello' has been improved to the icon feature
+
+1.80pre1 release 15 Jan 2000
+-------------------------------------
+* asm kernel has been rewrited for more speedup now!
+* added an efect to window iconize routine
+* fixed bugs when window icon not exist
+* added support for relative paths in FileDialog class
+* dynamic font loading for some biggest one - save momory space
+* added support for linear mode under MSDOS (up to 2.5 times faster BitBlt)
+* added support for 15 & 16 bit modes (MSDOS & LINUX only), LFB is required,
+  on now is default color depth in macro FASTGL_BPP in file 'base.h', you
+  can override this by adding -DBPP8, -DBPP15, -DBPP16 or -DBPP32 switch
+  into the compiler command line. Explicitly you can also compile lib for all
+  available modes with 'make -f makefile.l16' or 'make -f makefile.l32' for
+  LINUX. Eventually 'make -f makefile.d16' or 'make -f makefile.d32' for DOS.
+  Note! you must link with -lfgl16 or -lfgl32, no with -lfgl
+* make *linear* mode as startup default
+* change command line switch '-linear' to '-banked' - Now this switch disable
+  linear mode
+* removing of MEMWATCH utility from all sources
+* first issue of the OpenGUI FAQ - send me any questions about one!!!
+* added command line switch '-bench' for easy benchmarking
+* fixed bug for the MINUS key in the number input
+* added hot key for MINIMIZE/ICONIZE WINDOW - <ALT+F2>
+* fixed bugs - remove sending empty message to window
+* added ALT+F12 under DOS to emulate PrtScr function (save screen to BMP file)
+* added function 'void set_transpcolor(FGPixel)' - default is 0
+
+1.80 final release 26 Jan 2000
+-------------------------------------
+* many bug fixes from pre1 release
+* major changes in drawing Window pictograms - (WMINIMIZE & WNOPICTO)
+* major improvements in the BMP code - full support for 8 <-> 16 <-> 32 colors
+* many changes in EXAMPLES
+* fixed bug in FileDialog::selected()
+* fixed bug in EditBox [DELETE] key under linux
+
+1.81 release 27 Jan 2000
+-------------------------------------
+* improvements for Mesa 3.1 compiling
+* added class FGTimer - thanks to Sam Lantinga & SDL lib - LINUX ONLY
+* added -fno-exceptions into the makefile
+* bug fixed for TRANSPARENT mode in 16 & 32 bit colors
+* fixed WATCOM compiling
+* fixed relative paths in FileDialog class
+* fixed GCC 2.95.2 compiling
+
+1.82 release 31 Jan 2000
+-------------------------------------
+* updated examples (added Timer and Calc)
+* updated Slovak docs
+* disable linear mode for Watcom C++ - not capable on now
+* fixed clipping in draw_hline()
+* fixed MMX state in draw_hline() kernel proc (random FPU exceptions)
+* added code for drawing arc, ellipse and fill ellipse
+  void WindowDrawEllipse(int x, int y,	int rx, int ry, int c);
+  void WindowDrawEllipse(int x, int y,	int rx, int ry);
+  void WindowFillEllipse(int x, int y,	int rx, int ry, int c);
+  void WindowFillEllipse(int x, int y,	int rx, int ry);
+  void WindowDrawArc(int x, int y, double ang1, double ang2, int r, int c);
+  void WindowDrawArc(int x, int y, double ang1, double ang2, int r);
+  void fill_ellipse(int x, int y, int rx, int ry);
+  void draw_ellipse(int x, int y, int rx, int ry);
+  void draw_arc(int x, int y, double ang1, double ang2, int r);
+
+*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+                         2.00 release 8 Feb 2000
+*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+
+* the FastGL library has been renamed to OpenGUI (the name collide with
+  the 'fastgraph' trademarks)
+
+* added CreateColor8(r,g,b) to 8bit stuff (compatibility)
+* fixed FillEllipse clipping
+* added FGTimer into QNX version
+* the method BitmapSave() in 16 bit modes produce 24bit result for compatibility
+
+2.10 release 11 Feb 2000
+-------------------------------------
+* added support for 2 and 16 color BMP files
+* added support for a GIF file format read (with transparency!)
+* added transparent_color member into DrawBuffer class
+* added example 'gifread'
+* many improvements to the RAD utility (OpenGUI Sourcer)
+* some minor bug fixes (compiling etc.)
+* fixed (just another) LINEAR MODE for MSDOS Watcom C++
+
+2.10a release 14 Feb 2000
+-------------------------------------
+* moving back to the optimized draw_line algorith (ASM) - 3 times faster - bug
+  has been corrected
+* fixed some prototype incompatibilities
+
+2.11 pre1 & final release 23 Feb 2000
+-------------------------------------
+* improvements to lines in 16 & 32 bit color depth
+* bug fixes for transparent gif in 8bit mode & transparent != 255
+* added support for PCX 5.0 file format
+
+- FINAL -
+* fixed WindowRect() drawing in 16 & 32bit colors
+* fixed two bugs in WindowRepaint - in some curious cases don't draws properly
+* rewrited ColorDialog class for any color depths
+* added ColorDialog::Export(char *name) - for color savings
+* added ColorDialog::Import(char *name) - for color loadings
+* added example 'cdialog'
+* some minor internal changes for speedup
+
+2.12 release 24 Feb 2000
+-------------------------------------
+* fixed fatal error in WindowFocus() (2.11 final has one only)
+* a tons of improvements & bug fixes to OpenGUI Sourcer utility
+
+2.13 release 28 Feb 2000
+-------------------------------------
+* fixed banked draw_line GPF error
+* fixed 3DFX VOODOO detection
+* added Rendition Verite 2200 chipset support
+
+2.14 release 6 Mar 2000
+-------------------------------------
+* fixed '-bench' cmdline param for QNX
+* fixed WindowUpdate() for horizontal WindowLine()
+* added feature - all keys are sent to AppProc if exist one
+* added WindowCopyFrom(int,int,int,int,int,int,Window *) - like WindowPutBitmap
+  but source is Window object
+* changes in all sources GPL -> LGPL
+* added WindowVirtualRoot(int x, int y, int w, int h);
+* added WindowUpdate(int x, int y, int w, int h);
+* fixed negative coordinates in RamToVideo();
+* FAQ update
+* english doc update
+
+2.15 release 27 Mar 2000
+-------------------------------------
+* install path has been changed from /usr to /usr/local
+  Please add line '/usr/local/lib' the to file '/etc/ld.so.conf', if system
+  can't find libfgl.so library - (this is redhat problem by example).
+* better handling of the SIGINT signal under LINUX
+* fixed Root Window redraw when WindowVirtualRoot() is greater than SCREEN size
+* new methods for a Config class: HEX - for binary data up to 128 bytes long
+  Config::WriteHex(char *name, char *, int);
+  Config::ReadHex(char *name, char *, int);
+* fixed minor bug in TextEditor class #-(
+
+2.16 release 3 April 2000
+-------------------------------------
+* added new methods for MenuWindow class:
+  Label *AddLabel(char *s, int key=0, ControlCall f=0, int i=-1, int p=-1);
+* added new methods for Window class:
+  void WindowPanel(int x, int y, int a, int b, char *s, int ink1, int ink2);
+* fixed PITCH in Snd(int,int) under LINUX
+* fixed lockup in methods Window::RemoveControls();
+* fixed ~Control() - now Controls are *REALY* erased on delete
+* added class SliderBar - Slider without value printing
+* internal reworking of Slider class
+
+2.17 release 15 April 2000
+-------------------------------------
+* added new type of event: CURSOROUTEVENT
+* added new great example: 'rootwnd' - see readme.txt in these directory
+* fixed minor bug in gpm mouse driver - bad coor calculations in some cases
+* some speedup changes to methods Window::WindowRect();
+* added struct/object Pattern - for details see below
+* added MenuWindow::AddLabel(char *name, int key, ControlCall cb);
+* added function: draw_pattern_line(int x, int y, int x1, int y1, Pattern *);
+* added function: void drawto_pattern_line(int x, int y, Pattern *);
+* added function: void PatternLine(int x,int y,int x1,int y1, Pattern *);
+* added methods: Window::WindowPatternLine(int x0, int y0, int x1, int y1, Pattern *);
+* added methods: Window::WindowPatternLine(int x0, int y0, int x1, int y1, int color, Pattern *);
+* added methods: Window::WindowPatternRect(int x0, int y0, int w, int h, Pattern *);
+* added methods: Window::WindowPatternRect(int x0, int y0, int w, int h, int color, Pattern *);
+* added new globals: extern Pattern PatternDot, PatternSlashDot, PatternSlashDotSlash, PatternSlash;
+* some fixes in examples compiling (namely for Mesa 3.2 in RH 6.2)
+* fixed cosmetic bug in ColorDialog class
+* and here is these beast:
+
+typedef struct Pattern
+{
+	FGPixel *data;
+	int		len, masked, reset, pos;
+#ifdef __cplusplus
+	int next(void);
+	Pattern(FGPixel *pp, int l, int m, int r=1) : data(pp), len(l), masked(m),  reset(r), pos(0)
+	{
+	}
+#endif
+} Pattern;
+
+
+2.20 release 3 may 2000
+-------------------------------------
+* added void DrawBuffer::copy_region(int xsrc, int ysrc, int xdst, int ydst, int ww, int hh, DrawBuffer *srcbuf);
+* fixed bug - linux console at exit is now properly restored - Uff!
+* fixed fatal error for Bitmap::Bitmap(void *) CTOR - segfault
+* added void TextEditor::SetFocus(void);
+* linux fbdev reimplementation
+    - fixed dark colors in matrox (and others) fbdev - (convert 6 -> 8 bit palette)
+    - fixed fatal error with fbdev video mode settings != current
+    - fixed bug with non-released fbdev file descriptor
+* added new cmdline param '-sync' for fbdev monitor timings
+* added some optimalizations to Window::printf(int, int, char *);
+* now is GPM mouse prefered in svgalib mode too
+* improvements to Window::WindowUnLock();
+* added some debugging features - loglevel:  void SetDebug(int); You must define macro DEBUG too!
+* fixed bug RamToVideo(), VideoToRam() when size is over screen resolution
+  and start & end of block are out of one.
+* fixed bug with windows overlap & too many windows
+
+2.21 release 12 may 2000 - stable
+-------------------------------------
+* fixed command line switch '-safe' for non LINUX platforms
+* textto utility now reports a counts of all parsed lines
+* fixed drawto_line() bug
+* added moveto(int x, int y);
+* fixed bug with redundant 'gpm' restarts - please add '-R' switch
+  to startup GPM script in /etc/rc.d/rc3.d/S??gpm to the line with 'gpm'
+  but this action destroy X-windows mouse pointer :-(((
+* fixed some bugs for VESA FBDEV, because video mode change is unavailable :-(
+
+2.22 release 5 jun 2000 - stable
+-------------------------------------
+* some minor improvements
+* fixed bug in ~Window();
+* fixed bug in DrawBuffer::DrawBuffer() - virtual table corrupt!
+* fixed QNX UserEvent server bug - properly exit at shutdown
+* compiling fixes
+
+2.30 release 12 may 2000 - devel (there are ALL changes from current stable too)
+-------------------------------------
+* new base object - class FGShape as parent of all graph
+  primitives - maybe DrawBuffer() in next release
+* added support for custom resolutions (e.g. 1152x864) via -geometry switch
+  USING: a.out -geo 1152 864
+  NOTE: linux only on now!
+* added MTRR support for LINUX: 10%-15% speedup on K6-II processors
+* the variable 'mmx' has been renamed to '__fgl_mmx'
+* improvements to better FBDEV mode handling
+
+2.31 release 24 may 2000 - devel - binary incompatible with previous versions!
+-------------------------------------
+* added feature - Alpha Blending - see example 'Alpha'
+  (32BPP - 20MB/s in RAM on 233Mhz Pentium MMX)
+  (32BPP - 40MB/s in RAM on 450Mhz K6-2)
+  (32BPP - 5.6MB/s in VRAM on Voodoo3)
+* removed absolete methods:
+  DrawBuffer::BitmapDraw();
+  Window::WindowClipUser(); (now as DrawBuffer::clip())
+  Window::WindowClip(); (now as DrawBuffer::clip_shape())
+* Window::GetWorkRect() are DrawBuffer::get_clip_rect() now
+* added int DrawBuffer::set_clip_rect(x,y,width,height);
+* class FGShape removed with class DrawBuffer (as parents of the all)
+* added DrawBuffer::clip(int xs, int ys, int ws, int hs);
+* added DrawBuffer::clip(int xs, int ys, int ws, int hs, int xmin, int ymin, int xmax, int ymax);
+* added DrawBuffer::bitblit(int xdst, int ydst, int xsrc, int ysrc, int width, int height, DrawBuffer *src, int);
+  I suggest you to use this in most bitblt cases!
+* added struct FGRect { short x,y; unsigned short w,h; };
+* compile switch changed: -ggdb -> -g for smallest code results
+* added mtrr code to all linux makefiles
+* and many other cleanups, re-implementations etc.
+
+2.32 release 31 may 2000 - devel - binary incompatible with previous versions!
+-------------------------------------
+* fixed bug in ~Window() - bad instance release!
+* fixed bug in DrawBuffer::_init() - virtual table corrupt!
+* added DrawBuffer::box(x,y,w,h);
+* improvements for the all nVidia card detections (GeForce and above)
+* added: void DrawBuffer::SetColorKey(int);  for transparency
+  added: int  DrawBuffer::GetColorKey(void); for transparency
+* GuiEvent methods renamed:
+  # absolete -> current #
+  int	Key(void); -> int GetKey(void);
+  char	*Name(void); -> char *GetName(void);
+  int	Type(void); -> int GetType(void);
+  int	Buttons(void); -> int GetButtons(void);
+* added const char *GetVersion(); returns version string :-)
+* added warning about unalligned shapes (DrawBuffer, Window, Control ...)
+  in the verbose mode ('-verbose' cmdline switch)
+* fixed QNX UserEvent server bug - properly exit at shutdown
+
+2.39pre1 release 6 jun 2000 - devel - binary incompatible with previous versions!
+-------------------------------------
+NOTE: this is first prerelease of the new OpenGUI implementations and has
+      still some problems (I believe that not stability problems) with
+      clipping some primitives aka ellipses atc.
+      Next release will be faster and more clean implemented than
+      older versions. New paradigma is that *ALL* is drawable object
+      (base class DrawBuffer). Step 2, will be the new driver
+      architecture (see at drivers.cc file) which drastically
+      reduce the time to the new platforms adding.
+* fix compiler alignments problem with enumerated types & Watcom C++ (-ei switch)
+* fixed non released selector for MSDOS code
+* fixed bug in draw_line() with 'es' register & LINUX
+* fixed install path for Watcom C++ & MSDOS makefile
+* added new DrawBuffer methods (there are still empty) :
+  int hline(int x, int y, int size);
+  int vline(int x, int y, int size);
+  int line(int x, int y, int x2, int y2);
+  int rect(int xdst, int ydst, int ww, int hh);
+  int pixel(int x, int y);
+  int pline(int x1, int y1, int x2, int y2, Pattern *p);
+  int arc(int	xs,	int	ys,	double ang1, double ang2, int	r);
+  int ellipse(int x, int y, int rx, int ry);
+  int fellipse(int x, int y, int rx, int ry);
+  in4;5~t circle(int xs, int ys, int r);
+  int fcircle(int xs, int ys, int r);
+  void polygon(int n, int pt[][2], PolygonStruct * current);
+  void fpolygon(int n, int pt[][2], PolygonStruct * current);
+
+2.80 release 14 jun 2000 - stable - binary incompatible with previous versions!
+-------------------------------------
+NOTE: this release has totally rewrited the Window part for better performance and
+    more simplicity. All drawing code for primitives is moved to the DrawBuffer from
+    Window class.
+    This version is about 10-15% faster in a window operations to 2.2x branch!
+PRE1
+* fixed bug with draw mode (set_ppop) in DrawBuffer::box();
+* remove absolete the call: Context() from most sources - for speedup
+* remove Window(DrawBuffer *); & Window(int x, int y, int w, int h); constructors,
+  you can replace one by DrawBuffer class & its methods very simply.
+* remove absolete methods:  void Window::HideAll(void);
+* remove Window::WindowUpdate() - you can use WindowRepaint() rather!
+* and many others
+FINAL
+* fixed minor bug with linux shared lib versioning - current ver. is *.so.3
+* added some scripts for fast building - linux.sh, djgpp.bat
+* great speed improvements for WindowLine(), WindowFillPolygon(), WindowBox()
+  & WindowPixel() methods
+* some nice cosmetics things on menus & windows
+* some minor bugfixes from prerelease 1
+* fixed Watcom assembler compile problems
+
+2.81 release 15 jun 2000 - stable
+-------------------------------------
+* compile fix under GCC 2.8x (DJGPP)
+* fixed redraw bug in WindowMove() when this!=current
+* fnc text_to_buffer() removed - use DrawBuffer::text() rather
+* fixed DrawBuffer::text() stack corrupt with strncpy() & clipping
+* fixed examples for Watcom compiler
+* fixed djgpp.bat build script - added CR after each LF :-)))
+* fixed the "::" syntax error - bad indent utility :-(((
+
+2.90 release 22 jun 2000 - devel
+-------------------------------------
+* added new driver architecture as low level layer :-)
+* added graph_change_mode(new_scr_width, new_scr_height);
+* added get_ppop() fnc
+* fixed QNX transparency code
+* fixed QNX draw_line() bug
+* fixed DrawPointVector init in the file 'engine.asm'
+* some minor fixes
+
+2.91 release 27 jun 2000 - devel
+-------------------------------------
+* fixed videomode change with fbdev
+* new version of the license file - Lesser GNU 2.1 :-)
+* added: WindowScrollLeft() & WindowScrollRight() thanx to H.M.Voase
+* fixed DrawBuffer::fellipse();
+* fixed DrawBuffer::line() clipping
+* fixed Window::WindowScrollDown() image corruptions
+* fixed Slidebar class
+* fixed unreleased driver object in cleanup();
+
+2.92 release 28 jun 2000 - devel
+-------------------------------------
+* NOTE! this version produce some wild colors with bitmaps
+        please wait for 2.93 to fix them. The reasons for this
+	is new 8 bit palette paradigm for indexed modes.
+* fixed QNX compiling error
+* removed absolete '-mode N' command line switch
+* alpha support for 3Dfx hw acceleration (LINUX & FBDEV & rectangles|lines)
+* starting alpha support for Xfree86 DGA 2.0
+
+2.93 release 29 jun 2000 - devel
+-------------------------------------
+* added command line switch '-noaccel' to disable HW accel for some cards
+* the big switch from 6-bit per color palette to 8-bit per color
+  palette. Upgrade from 262000 to 16000000 colors for indexed modes
+  on the apropriate hardware.
+  FNC CtreateColor removed as absolete. On now you can use 'CreateColor(r,g,b,index)'
+  only! In an indexed modes with index arg==-1 it create new color or return
+  one existing. If you pass index in range <0,255>, color will be created at
+  THIS color index. In the direct or true colors modes it immediatelly returns
+  right colors. See base.cc sorce file for more details.
+  NOTE: Be care if you get some dark colors in your progs. The R, G, B colors
+  are from <0,255>, since old version <0,63>!
+* some new screenshots on the web page, you can send your own! :-)
+* added ROPs support for 3Dfx HW
+* fixed 3Dfx clipping
+
+2.94 release 3 jul 2000 - devel
+-------------------------------------
+* VooDoo acceleration now works under SVGAlib also
+* fix for Voodoo VESA 0x4f08 call bug
+* added common PCI detection routine to FGDriver
+* QNX gcc compiler fixes
+* some fixes for older QNX kernels versions <= 4.23
+
+2.95 release 19 jul 2000 - devel
+-------------------------------------
+* some cosmetics improvements to WindowPanel()
+* rectangle on mouse drag is drawn with draw_pattern_box() now
+* fixed bug with linux & UID != root
+* fixed BLACK screen atexit with nVidia drivers & SVGAlib
+* fixed situation when WMODAL & WMINIMIZE window flags are given at once
+* fixed respawn of 'gpm' server where one is not in the PATH
+* fixed bug with EditBox class and hexadecimal modes
+
+2.96 release 20 jul 2000 - devel
+-------------------------------------
+* added '-nodga' cmd switch for future use
+* added X-Windows 4.0 DGA 2 wrapper - now you can debug in Xwin - Thanx to Sam
+  Latinga and his SDL library (code is inspired from one).
+  On now I tested only two cards:
+      nVidia TNT2+nv_driver 4.0 = seems to works OK!
+      Voodoo 3 = don't work with ver 4.0 of the server, maybe 4.01 will be OK.
+  NOTE: mouse and mode switching is fully implemented but keyboard generate
+  only simly keycodes (ALT, CTRL, Fx etc. still don't work). Try it!
+
+2.97 release 23 august 2000 - devel
+-------------------------------------
+NOTE: console switching under linux XWIN still don't work
+* fixed GCC 2.96 compiling in base.h (thanx to April)
+* improved keyboard handling under XWindows & DGA - still dangerous!
+* fixed non-standard MATROXFB 832x600 mode
+
+2.98 release 21 september 2000 - devel
+-------------------------------------
+NOTE1: Since OpenGUI 2.98 is gcc 2.91 and above required!!!
+NOTE2: Change all: '#include <fastgl.h>' to '#include <fastgl/fastgl.h>'
+NOTE3: This version is still broken for GCC under QNX! Use Watcom instead.
+
+* headers are moved to the directory /usr/local/include/fastgl
+  now - you would use something like #include <fastgl/fastgl.h>
+* new flag WNOICON - disable icon showing when window is iconized
+* some improvements and bug fixes to the iconized window code
+* fixed inner loop in CTRL+TAB (switch to next Window)
+* added new class FGListBox - listbox.h, the old class ListBox
+  will be removed since ver 3.0 of OpenGUI
+* added new class template FGList - fglist.h (like a STL list)
+* added new class FGString - fgstring.h (very light implementation of strings)
+* console switching use signal SIGUNUSED now (SIGUSR2 before)
+* added NOABSOLETE macro to 'config.h' file to disable old ListBox class code
+* class FileDialog has been reimplemented (visual changes only & MKDIR options)
+* new examples 'listbox' and much improved the old examples
+* added Control::SetInk(FGPixel) & Control::SetPaper(FGPixel)
+* many bugfixes & improvements to The Sourcer utility
+* fixed signed issue with Palette struct (this fix some stranger color in Bitmap)
+
+2.98.1 release 9 october 2000 - devel
+-------------------------------------
+* fixed some redhat 7.0 quirks (make 3.79.1, gcc 2.96, OSTYPE env. variable)
+* fixed core dump when no SVGAlib nor FBDEV are not available
+* revert to previous version of the "FastGL Sourcer" utility
+* optimized polygon drawing for objects up to 128 vertexes (static versus
+  dynamic memory allocation).
+
+2.99 release 6 november 2000 - develop version but very stable
+-------------------------------------
+* added static methods 'void Control::Close(CallBack)' as built-in methods
+  to window close from it's own Controls.
+  By example: AddMenu("Quit",'Q',Control::Close); // close owner window
+* added lookup for variable 'default_videomode' in the app config
+* fixed bug with <ENTER> key with FileDialog class
+* changed MOVEEVENT policy. Now ALL mouse movement goes into the AppProc as
+  absolute mouse position and into every window that cursor is over one.
+* template callbacks (aka SIGNAL-SLOT dogma) - 'callback.h'. This stuff is
+  still not used.
+* some minor fixes examples, rad & makefiles for Mesa3D support
+* fixed crash error in a polygon routine
+* added Window::SetInk(FGPixel) & Window::SetPaper(FGPixel)
+* added fnc for dynamic font loading (bitmaped & monospaced):
+  int register_font(unsigned char *source, int width, int height, int count, int offset);
+
+3.00 beta1 - release 20 november 2000 - preview of the next stable branch
+--------------------------------------------------------------------------
+* page flipping - int Flip(void);
+* added EditBox::CapsMode();
+* removed RegisterJob()
+* renamed GuiEvent::Name() -> GuiEvent::GetName()
+  renamed GuiEvent::Type() -> GuiEvent::GetType()
+  renamed GuiEvent::Key() -> GuiEvent::GetKey()
+* fixed bug with 640x480 resolution under MSDOS
+* added new OOP API - interface inspired with Borland VCL
+  These methods are added into the App class
+	virtual void OnKeyPress(int keycode)
+	virtual void OnMouseMove(int x, int y)
+	virtual void OnClick(int x, int y)
+	virtual void OnContextPopup(int x, int y)
+	virtual void OnStartDrag(int button, int x, int y)
+	virtual void OnEndDrag(int button, int x, int y, int w, int h)
+	virtual void OnCursorOut(int where)
+  These methods are added into the Window class
+	virtual void OnKeyPress(int keycode)
+	virtual void OnMouseMove(int x, int y)
+	virtual void OnClick(int x, int y)
+	virtual void OnContextPopup(int x, int y)
+	virtual void OnPaint(void)
+	virtual void OnStartDrag(int button, int x, int y)
+	virtual void OnEndDrag(int button, int x, int y, int w, int h)
+	virtual void OnMove(int dx, int dy)
+	virtual void OnResize(int dx, int dy)
+	virtual void OnIconize(void)
+	virtual void OnAccelerator(Control *cb)
+
+3.00 beta2 - release 20 november 2000 - preview of the next stable branch
+--------------------------------------------------------------------------
+* re-enabled HW acceleration for 3DFX under SVGAlib
+* some minor changes and improvements
+
+3.00 beta3 - release 26 november 2000 - preview of the next stable branch
+--------------------------------------------------------------------------
+* fixed EditBox unitialized 'caps mode' variable
+* some work with DX5 drivers
+* added support for RTEMS platform by Rosimildo da Silva - thanx
+
+3.00 beta4 - release 26 november 2000 - preview of the next stable branch
+--------------------------------------------------------------------------
+* TAB key in editbox switches to the next editbox if any is available
+* first version of a working WIN32 beta driver - BC++ builder 5.0 make included
+* fixed double Window::OnKeyPress() calling
+* fixed double drawing in DrawBuffer::box() when ppop==_GSET
+
+3.00 beta5 - release 17 dec 2000 - last preview of the next stable branch
+--------------------------------------------------------------------------
+* fixed register_font(), set_font() and added a new example 'fontadd'
+* many improvements to directx driver
+* some small bug fixes
+* added command line switch '-dac8' - force 8bit DAC if colors are dark
+  this is a workaround for some buggy FBDEV drivers)
+* fixed bug when 'y' coordinate for draw_hline is out of clipping window
+* fixed fill_ellipse() drawing with enabled optimizations - (ebx regs. corrupting)
+* tested DOUBLE/TRIPLE BUFFERING under MSDOS, WIN32 and LINUX (all drivers) - works!
+* added 'int DisableBuffering(void)' and example for double-buffering
+
+3.0.0 final - release 24 dec 2000 - first stable
+--------------------------------------------------------------------------
+* added support for PNG and JPEG via libpng & libjpeg (16/32bit modes only)
+  added DrawBitmap::stretch(int new_width, int new_height)
+  added DrawBitmap::stretch(float ratio_x, float ratio_y)
+* added simple image viewer example: 'zgv'
+* renamed DrawBuffer::pixel() to DrawBuffer::putpixel()
+* migrated Window::WindowGetPixel() to DrawBuffer::getpixel()
+* removed dependency between logical & physical width of the scan line
+* improved mouse cursor for page flipping modes
+* fixed flipping for 16&32bit modes
+
+3.0.1 - release 5 jan 2001 - stable
+--------------------------------------------------------------------------
+* fixed 3DFX acceleration & page-flipping
+* fixed DIRECTX acceleration & page-flipping
+* fixed char printing with code 0x80..0xff
+* fixed memory leak in the example 'fgv'
+* fixed some minor jpg & png decoder bugs
+* fixed makefile.bc5
+
+3.0.2 - release 10 jan 2001 - stable
+--------------------------------------------------------------------------
+* fixed asm routines for the line drawing
+* fixed bad wait_for_sync with DGA2 driver
+* reworked HW acceleration stuff
+* fixed bug with some old FBDEV drivers (aka 3DFX) and mode settings
+  Note! 3dfx fbdev driver into 2.4.0 has bug - don't work the wait for vsync
+* added HW accelerated fillbox to DGA2 driver
+
+3.0.3 - release 1 feb 2001 - stable
+--------------------------------------------------------------------------
+* NOTE! see at http://www.tutok.sk/fastgl/userforum.exe
+        THERE ARE NEW FORUM INTENDED TO THE OPENGUI LIB
+
+* fixed minor driver bug when a requested video resolution
+  is lower than the lowest supported (mainly DGA driver)
+* removed absolete cmd switch '-bench'
+* added macro 'FG_NOPLAIN' to disable some plain minor used graphics primitives
+  e.g. text_out, fill_circle atc. for smalest library
+* renamed fnc: Window::FlushInput() to ::FlushInput()
+* fixed EditBox::Disable() when EditBox is opened at the disable time
+* fixed minor bug with DrawBuffer::set_clip_state()
+
+3.0.4 - release 7 feb 2001 - stable
+--------------------------------------------------------------------------
+* critical bug fixes in the RAD utility - no more crashes on 'Save' or multi-
+  ple forms, please upgrade to package 'OpenGUI-3.0.4-sourcer.tgz'
+* minor fixes for class TextEditor
+* re-enabled void Window::HideAll(void);
+* some internal recode
+* fixed crash bug with alpha chanel and the PNG files
+* update to the new libpng 1.0.9 binaries for the Borland and DJGPP compilers
+  you need to download one from OpenGUI site as file 'OpenGUI-3.0.4-libs.tgz'
+  and 'OpenGUI-3.0.4-include.tgz'
+
+3.1.0 release - release 15 march 2001 - devel
+--------------------------------------------------------------------------
+* added proportional fonts
+* fixed palette bug with BitmapSave()
+* fixed makefile issues with Suse Linux (OSTYPE variable)
+* fixed PRTRSC keycode with linux kernel >= 2.4.0
+* fixed qnx mouse cursor range
+* added TextEditor::AppendLine(char *);
+* fixed minor bug with ~Window() and object counter
+- no fixed clipping with HW line drawing on 3dfx
+* rename and added external font registering:
+  // fixed binary
+  int register_font_fix(unsigned char *source, int width, int height, int count, int offset);
+  // proportional from file
+  int register_font_file(const char *source);
+* these new fonts are named as (you can set one via set_font() calling):
+  FONTSYS - MS Sans serif bold 16
+  FONTSYSMEDIUM - MS Sans serif 16
+  FONTSYSLIGHT - MS Sans serif 13
+* include some basic proportional fonts as compiled-in
+* replace fixed font with proportionals with some few Controls
+* fixed nVidia paging and Watcom C++ (crazy!)
+
+3.1.1 release - release 15 april 2001 - devel
+--------------------------------------------------------------------------
+* fixed text strings with codes >128
+* improved FGList & FGString classes to better handling with the Borland C++ 5
+* some improvements to the class TextEditor
+
+3.1.2 release - release 15 april 2001 - stable
+--------------------------------------------------------------------------
+* fixed 'Label' control redrawing after the mouse click
+* fixed lost close() on the /dev/ttyx with linux
+* fixed gprintf() and text_out() bug with the proportional fonts
+* fixed bug with proportional fonts convert on startup (corrupted last microline)
+* fixed DrawBuffer::text() clipping (with the long strings)
+* improvements - when the TextEditor object is in the READ_ONLY mode,
+  then FILE->OPEN cmd is disabled
+* changed MSDOS makefiles '-g' to '-gstabs+' switch is used now
+
+3.1.3 release - release 27 april 2001 - stable
+--------------------------------------------------------------------------
+* fixed FGList::CNode copy constructor - some crashes
+* fixed linux driver issues with SVGALIB & cards with banked modes only
+* fixed saving of the window size (aka WUSELAST flag)
+
+3.1.4 release - release 11 jun 2001 - stable
+--------------------------------------------------------------------------
+* added basic support for PENMOUNT touch pad - for more see at the 'config.h' file
+* fixed warning with libpng and adaptive_filter settings
+* fixed memory leak/corruption with FileDialog class & more than a 256 files in a dir
+* fixed DGA & DIRECTX drivers and stupid banked mode settings
+
+3.1.5 release - release 9 sep 2001 - stable
+--------------------------------------------------------------------------
+* NOTE: for REDHAT 7.1 users:
+  1. the 'nasm' assembler from the distribution is broken. Try
+     find 'nasm-0.98.08.tar.gz' or 'nams98bf.zip' packages on the net.
+     Both these works fine for OpenGUI lib.
+  2. the 'ld' utility is able to link OpenGUI apps as dynamic
+     only - compiler switch '-static' don't work!
+
+* oron patch for libtool
+* making fglmesa.[ch] BPP dependence free
+* support for MesaGL via an additional libs 'fgl_mesa'
+* automation of Mesa3D support in compile time
+* improved makefiles for LINUX
+* added callibration feature to the penmount driver
+* added mouse emulation with the keyboard keys - see FG_MOUSEKEYS into the
+  config.h file - all the keys are easy to the change - defaults are ARROWS+CTRL
+* fixed DGA acceleration when video device are not supports one
+* added full TGA file format support
+* added switch APP_LOCALDIR to class App - in conjuction with APP_CFG this switch
+  put *.rc files into local directory instead to the HOMEDIR (a'la MSDOS version way)
+* fixed Window::RemoveControl() function from crash under some circumstances
+* fixed SetRepeatDelay() bug - aka BUTTONHOLDEVEN
+* changed: MSDOS makefiles '-gstabs+' to '-gcoff' switch is used now
+
+3.1.99 release - release 23 sep 2001 - devel
+--------------------------------------------------------------------------
+* temporary disabled HW accel on WIN32
+* new, long awaited X Windows driver - runs without ROOT privilegies!!!
+* updated TGA file format support - 8bit color, Gray, 16,24 and 32bit colors
+  include compressed form of one
+* new common configuration
+ for LINUX targets
+
+3.2.0 release - release 18 oct 2001 - stable
+--------------------------------------------------------------------------
+* new STANDARD PS/2 MOUSE built-in driver - cmdline param '-ps2'
+* added support for MMX and 16 & 32bit colors for Watcom C++ under MSDOS (watcom.bat)
+* added JPEG & PNG support for Watcom C++
+* fixed compiling with Watcom C++ 11.0c (see http://www.openwatcom.org )
+* added 'void DisableCtrlBreak(void);'
+* App::SetTimerProc(fnc,timeslice);
+* fixed TDFX driver & HW clipping
+* fixed Window::WindowScrollRight()
+* added portable 'unsigned long FGClock(void)' - returns numbers of miliseconds
+  from the start of program
+* new makefile infrastructure
+
+3.2.1 release - release 6 nov 2001 - stable
+--------------------------------------------------------------------------
+* fixed CTRL+TAB window switching
+* added FGClock() calibration on startup
+* fixed bug in transparent blitting with some small rectangles (below 8 pixels at width)
+* fixed XOR, AND and OR functions with draw_line() & X11  driver
+* added DBLCLICKLEFTEVENT, DBLCLICKRIGHTEVENT - as mouse doubleclick events
+* fixed 'ldconfig' issues under LINUX
+* renamed library 'fgl_mesa' to 'FGMesa'
+* added support form MesaGL 4.0 - makefile.gl4 - refinement & 16bit colors are supported now
+  morph3d.c - works with weird colors - bad shading with 3Dnow ???
+  NOTE! I must disable 3Dnow support in MesaGL compile time. Later I was
+  disabled MMX support in Mesa and I get best FPS!!! Crazy!
+
+3.2.2 release - release 20 nov 2001 - stable
+--------------------------------------------------------------------------
+* added class GLSurface - OpenGL support in window - see 'example/mesa3d/gtrain.mak'
+* class FGMouseCursor - see 'example/cursor'
+* added CursorLoad(FGMouseCursor *) for user defined cursors
+* fixed get_ppop() bad return value
+* MesaGL cleanup (for 3.4/4.0)
+* new mouse cursors for some situations
+* dynamic *.so library has been moved back to '/usr/lib' (standard ldconfig path)
+
+3.2.3 release - release 26 dec 2001 - stable
+--------------------------------------------------------------------------
+* final update to the slovak version of OpenGUI User's Guide
+* added SIS chipset support
+* fixed WIN32 compiling (just typo)
+* final cursor improvement
+* the cosmetic improvements to the PointButton controls
+
+3.3.0 release - release 26 jan 2002 - devel
+--------------------------------------------------------------------------
+* added Window::DisableControls()
+* added Window::EnableControls()
+* added WNOTEBOOK window flag
+* added Window::AddTabPage(char *name)
+* added Window::DeleteTabPage(char *name)
+* added Window::SetTabPage(char *name)
+* added Window::AddTabPage(char *name)
+* added support for TabPages to the RAD utility
+* added example tabpages
+* fixed FGClock() when time change
+* fixed missing reference to 'atexit()' fnc
+* fixed compiling/makefile for the MesaGL 4.x
+
+3.3.1 release - release 26 feb 2002 - devel
+--------------------------------------------------------------------------
+* fixed linux.sh building script for MesaGL 4.x
+* fixed click on active TabPage
+* added ColorScheme.notebook_active
+* fixed MOVEEVENT in case that no any window exist at startup
+* added makefile and support for MesaGL 4.x & Borland C++ 5
+* updated examples for MesaGL & Borland C++ 5
+
+3.3.2 release - release 17 mar 2002 - devel
+--------------------------------------------------------------------------
+* added const char * Window::GetCurrentTabPage(void)
+* TAB key now switch between TABPAGES in the window
+* fixed GPM mouse server params when started one
+* fixed compiling with newest NASM 0.98.23
+* fixed some small mistakes with TabPages implementation
+* fixed bad path when installing 'file2asm' utility
+
+3.3.3 release - release 28 mar 2002 - stable
+--------------------------------------------------------------------------
+* new email: nezmar@atlas.sk
+* fixed weak color allocations with 8bit colors
+* fixed the Bitmapped version of the PushButton class
+* fixed PageTabs and WindowRelocate() issues
+* fixed using the WESCAPE window flag and ESCAPE key
+* even more improvements to GPM mouse support
+* added some initial code for the future HW accelerator support
+
+3.3.4 release - release 12 apr 2002 - ultra stable
+--------------------------------------------------------------------------
+* fixed charwidth() functions return value for fixed fonts
+* fixed bad underscore for accelerator key with the EditBox class
+* added TwoStateButton	*Window::AddTwoStateButton(int xs,int ys,
+  int w, int h, char *nm, int key=0, int * variable=0, ControlCall=0);
+* fixed some ther cosmetics issues
+* added 'on demand' loading for some FBDEV drivers
+* modified MOVEEVENT mouse event - members 'wnd' and 'accel' contains
+  current WINDOW and CONTROL pointers now
+
+3.3.5 release - release 29 apr 2002 - ultra stable
+--------------------------------------------------------------------------
+* update to Borland C++ 6.0 (makefiles, source etc.)
+* fixed DGA support (it doesn't run because bad startup detecting)
+* added a new class FGUpDown - these one add increment/decrement by
+  an optional step feature to the EditBox (int and double version of one)
+  FGUpDown(EditBox *ptr, double step);
+  see example 'UpDown'
+* added a new example for MesaGL - iso surface (thanx to Ivan Kasanicky)
+* improvements to WIN32 target - added #pragma link for automated linking
+  fglXX.lib under Borland C++
+
+3.4.0 release - release 29 apr 2002 - stable
+--------------------------------------------------------------------------
+* much improved X11 driver - full support for 8bit colors and MIT SHMEM
+  extension (up to 50% speedup)
+* this all has been succesfully ported to Solaris 8 (Yes, the new OpenGUI platform!)
+* some small fixes and typos
+
+3.4.1 release - release 18 july 2002 - stable
+--------------------------------------------------------------------------
+* even more improved X11 driver (linux & solaris)
+* new *experimental* QNX4 graphics layer - replace for 'int10' driver
+  if you can try this, type: 'gmake -f makefile.qnx2'
+* fixed some bugs in FGTabPage implementation
+* added Window::ShowModal();
+
+3.4.2 release - release 12 sep 2002 - stable
+--------------------------------------------------------------------------
+* Solaris 8:
+  - fixed fatal bug (self recursion in driver code)
+  - fixed solaris.sh & solaris.mak files
+  - fixed unitialized variables (coredump) in the driver init code
+* fixed bug with '-ps2'| '-dac' command line parameters
+* fixed handler calling FGUpDown class
+* X11 window now shows the name of the executable
+* added Chips&Technologies chipset detection
+* added button 'HOME' into the FileDialog class
+* fixed doubled line in RAD generated code
+
+3.5.0 release - release 24 sep 2002 - stable
+--------------------------------------------------------------------------
+* official full support for Borland Kylix3 C++ compiler - static libraries on now
+* added full support for superb FREETYPE2 truetype font library
+  you can add UNICODE & UTF8 strings with your app now - add '-lfreetype' line
+  to your projects or disable default TTF support in 'config.mak' file
+  before the building of the library. See 'ttf' example for more details.
+* added new class 'FontProperty'
+    class FontProperty
+    {
+		friend class Window;
+		void *_font;
+		int   algorithm;
+	public:
+		FontProperty(char *name, int size);
+		~FontProperty();
+		void Bold(int value);
+		void Underline(int value);
+		void Italic(int value);
+		void Solid(void) { algorithm = 0; }
+		void Shaded(void) { algorithm = 1; }
+		void Blended(void) { algorithm = 2; } // not implemented yet
+		int  Valid(void) { return !!_font; }
+    };
+* added new methods:
+    void Window::WindowText(int x, int y, char *s, FontProperty * f, int color, int bk);
+    void Window::WindowTextUTF8(int x, int y, char *s, FontProperty * f, int color, int bk);
+    void Window::WindowTextUnicode(int x, int y, const unsigned short *s, FontProperty * f, int color, int bk);
+* added static public variable 'int App::ttf_support' to get the proper
+  state of TTF support at runtime.
+* fixed 'ExpandColor' MACRO - syntax error
+* on systems with ImageMagick installed, you get also the PNG files
+  after the PRINTSCREEN key hitted now. (screen snapshot function)
+* All the library files (*.h and *.a files) are now moved from
+  '/usr/local' to '/usr' directory (include and lib subdirs).
+* the screen at the application shutdown is cleared with the special efect :-)
+
+3.5.1 release - release 2 oct 2002 - yet more stable
+--------------------------------------------------------------------------
+* fixed SVGALIB branch (core dump within Chips&Tech chipset detection)
+* fixed DrawBuffer::set_clip_rect() - added test for out-of-range values
+* fixed align problems with Borland C++ and library (namely class FGUpDown)
+* fixed some issues with Kylix3 port and draw_line(), text_out() etc.
+* fixed global set_clip_rect() in X11 drivers (LINUX&SOLARIS)
+
+3.5.2 release - release 1 nov 2002 - yet more stable
+--------------------------------------------------------------------------
+* some small fixes
+
+3.5.3 release - release 23 dec 2002 - yet more stable
+--------------------------------------------------------------------------
+* fixed some possible binary incompatibilities between C++ compilers (enum -> int)
+* XSetClipRect under Solaris is again here ( Solaris 8, release 2 seems OK, release 1 will crash)
+
+3.6.0 release - release 7 feb 2003 - binary uncompatible with previous versions!
+--------------------------------------------------------------------------
+NOTE: this release is focused mainly to the new alternative to
+the calback mechanism between the two instances of a various classes
+via third common class.
+
+* added new feature/class FGConnector - for more see at example 'connect'
+* added: int GetOS(void);
+  enum { OSTYPE_LINUX=1, OSTYPE_MSDOS, OSTYPE_WIN32, OSTYPE_QNX };
+* WIN32 - fixed procedure Snd(); Now you can hear the PC-speaker
+* Numlock keypad now works properly under LINUX
+* added FGRect * DrawBuffer::ftriangle(int x1, int y1, int x2, int y2, int x3, int y3);
+* added FGRect * Window::WindowFillTriangle(int x1, int y1, int x2, int y2, int x3, int y3, int col=-1);
+* examples are now completely revisited and compiles properly on every platform
+* fixed crash when Window vertical size is <16 pixels
+
+3.6.1 release - release 16 feb 2003 - stable
+--------------------------------------------------------------------------
+* new MesaGL interface and significant speedup! (see at examples)
+* fixed alpha blending/transparency with Kylix3
+* fixed memory leak with 'text_out();'
+* fixed scrolling with Kylix3 code
+
+**************************************************************************
+
+4.0.0 beta 3 - release 19 feb 2003
+--------------------------------------------------------------------------
+* removed class FGList<>, use std::vector<> or std::list<> instead
+changed:
+------------------------------------------------
+X_width -> GetXRes()
+Y_width -> GetYRes()
+
+X_max -> (GetXRes()-1)
+Y_max -> (GetYRes()-1)
+
+videobase -> GetFrameBuffer()
+
+ListBox -> FGListBox
+
+inp() -> inpb()
+outp() -> outpb()
+
+FGList<> -> std::list<> ( or std::vector<> )
+
+
+removed:
+------------------------------------------------
+	QNX, Watcom, Solaris and RTEMS ports
+	MMX support (temporary)
+
+other:
+------------------------------------------------
+
+No more OpenGUI.def is required with WIN32 port
+
+
+added macros:
+------------------------------------------------
+FG_MINOR
+FG_MAJOR
+FG_PATCH
+
+4.0.0 - release 8 april 2003
+--------------------------------------------------------------------------
+* Uff, final.
+
+4.0.1 - release 12 april 2003
+--------------------------------------------------------------------------
+* fixed inpl() & outpl() with Borland C+ code
+* removed MSDOS branch :-(, you can still use OpenGUI 3.x for DJGPP
+* speed-up (4x) for PCI bus scan routine
+* procedure IError(char *text, int flag) has new mode - flag|2 for MODAL window
+* added solaris recursive threads - still not tested!
+* removed support for banked video mode
+
+4.0.4 - release 12 may 2003
+--------------------------------------------------------------------------
+* new MAILING LIST!  -  opengui-subscribe@yoyo.sk
+* big cleanup
+* removed class FGString, use std::string instead
+* initially support for Doxygen - new detailed docs on the way ??? Maybe!
+* some minor fixes for DrawBuffer::line(), DrawBuffer::hline(),
+  DrawBuffer::vline() and DrawBuffer::putpixel()
+* file 'callback.h' has been removed
+* a new example 'mandelbrot'
+* Borland C++ builder 6.0 complete project in subdir 'bcc'
+* most of global & GuiEvent functions are moved to the App class
+* global SendEvent is now method of the Window class
+* added Window::SendEvent() StateLock() for Window handler locking
+
+4.1.0 - release 8 june 2003
+--------------------------------------------------------------------------
+* major doc update - if you have installed DOXYGEN try type: 'make doc'
+  and see at the directory ../doc, else download one from website.
+* many protected members and methods were moved to private part of class
+  so if you lost compatibility, try send me email with details to improve.
+* removed some absolete methods
+* get_key() is now App::get_key();
+* FileDialog class callback routine has new prototype:
+  old: void (*callback)(char *);
+  new: void (*callback)(char *, FileDialog *);
+* Palette has been rename to FGPalette
+* added Window::WindowClose() for regular window destruction
+
+4.1.1 - release 15 june 2003
+--------------------------------------------------------------------------
+* fixed clipping with DrawBuffer::putpixel()
+* added RTTI compiling switch to Kylix3 and BCB6 projects for better ABI compatibility
+* added APP_ENABLEEFECTS for application constructor (enables some visual efects
+  on now only screen clear at exit)
+* added two new virtual callbacks to class App:
+  virtual bool OnIdle(void);
+  virtual void OnTimer(int secs);
+* fixed crash on the delete of class TextEditor (corrupted vtable)
+
+4.1.2 - release 22 june 2003
+--------------------------------------------------------------------------
+* added widget/class FontDialog to font choose by user - see the new example 'fontsel'
+* added function: int FGFontManager::register_font_ttf(char *filename, int points, int count, int offset, char *desc);
+  it registers truetype font (if TTF support is enabled) with specified size as
+  standard system fonts
+* Kylix3 port will work properly with the tool VALGRIND
+  (superb memory leak/corrupt detector)
+* added 'char *fontname' parameter to the all font prepare functions
+* fixed some minor bugs related to font management
+* fixed Solaris 8 compiling - it runs OK
+* added function: char * FGFontManeger::GetFontName(int font_id);
+* the max number of system fonts is increased to 256
+
+4.1.3 - release 10 july 2003
+--------------------------------------------------------------------------
+* M$ Visual C++ 6 support added
+* MenuWindow constructors no more requires 'name' parameter
+
+4.2.0 - release 13 july 2003
+--------------------------------------------------------------------------
+* completely new Win32 & DirectX code
+* added support for windowed mode for the Windows platform - good for debug
+  you can enable by command line parameter '-win'
+  NOTE: you must have use the same color depth for OpenGUI app and your
+  windows desktop - i.e. compile with BPP16 for 16bit colors, BPP32 for true
+  colors etc.
+* fixed - FileDialog closes when you click to a file as before
+* MenuWindow automation positioning works as before :-)
+
+4.2.1 - release 1 september 2003
+--------------------------------------------------------------------------
+* fixed ClipLine() code freeze
+* added TIFF image file support (via libtiff) - configure via 'config.mak' file
+* added middle mouse button support via CLICKMIDDLEEVENT, DBLCLICKMIDDLEEVENT
+* added Bitmap::rotate(ENUM_ROTATE_DIRECTION) method
+* added copy constructor to class DrawBuffer
+* added copy constructor to class Bitmap
+* you can get the screenshot under Windows by pressing F12 now
+
+4.2.2 - release 27 september 2003 - stable
+--------------------------------------------------------------------------
+* the mouse wheel is now supported on X11 and WIN32 platforms
+  now some visual Controls are sensitive to the wheel, e.g. EditBox(), FGUpDown() or Slider()
+* fixed IconWindow destructor - now it releases attached icon automtically - don't release it
+  for more see example 'hello'
+* change compile options '-O3' to '-O2' for LINUX because of gcc 3.3 miscompiling
+* fixed class FGTabPage copy constructor, Window::AddTabPage() now works properly
+* added method: int Config::ReadBool(char* name, bool& value);
+* added method: void Config::WriteBool(char* name, bool value);
+* added new event type: MOUSEWHEELEVENT
+  GuiEvent::GetButtons() call  for this event returns -1 or 1 for apropriate directions
+* added new event type: CLICKMIDDLEEVENT
+* added virtual void Window::OnMiddleButton(int x, int y)
+* added virtual void Window::ControlOnWheel(int x, int y, int delta)
+* added virtual void Control::WheelSpin(int delta)
+* added CheckButton *Window::AddCheckButton(int	xs, int	ys, char *nm, int key, bool * variable, ControlCall f, int flag)
+* added CheckButton *MenuWindow::AddCheckButton(char *nm, int key, bool * variable, ControlCall f, int flag)
+* added FGUpDown::Disable()
+
+4.2.9 - release 06 september 2003 - stable
+--------------------------------------------------------------------------
+* fixed crash on WindowIconize() call
+* added support for Intel C++ 7.0 (edit linux.mak file, replace the string 'gcc' with 'icc' )
+* revisited Solaris 2.8 compiling - works OK
+* namespace support was introduced - edit base.h file, line 33 to support
+  this feature - namespace code is 'fgl'
+* class FGTimer has new parent: class FGConnector, for better system interaction
+* added CBuilderX project files (yes, it realy exists and compile OpenGUI library!)
+
+4.3.0 - release 28 october 2003 - stable
+--------------------------------------------------------------------------
+* updated RAD utility for better compatibility of generated code
+* projects update
+* class Config is now standalone in files cfg.[cpp h]
+* added new data storage classes - cfgstore.cpp
+* added the biggest feature - 'pane' - see example 'pane'
+* added Config::Sort() methods to store config file as sorted
+* Controls now accept SetFont() call
+* Window::WindowPanel() is deprecated - use Window::AddPanel() instead
+  from now is panel a regular Control object - i.e. you don't need repaint
+  one explicitly
+* using VESA VGA framebuffer now emit error properly - use native one
+* fixed bug with XWindow keyboard and death keys
+* some changes to makefiles - by example you can type 'make alls' for building
+  static libraries only.
+* fixed listbox::SetColors() - bad argument order
+* added T& listbox::item(int) for compatibility with older versions of OpenGUI
+
+4.3.1 - release 3 november 2003 - stable
+--------------------------------------------------------------------------
+* migration to __fastcall declspec (C++ ABI to last OpenGUI is broken - recompile all projects)
+* documentation improvemets
+* Added class RadioGroupV - see example 'radiogroup'
+* Added class RadioGroupH - see example 'radiogroup'
+* added class FGText - dynamic text strings
+* added void BaseGUI::SetUserData(void*)
+* added void* BaseGUI::GetUserData(void)
+
+4.3.2 - release 8 november 2003 - stable
+--------------------------------------------------------------------------
+* finalized migration to fgl namespace
+* fixed examples
+* minor changes to classes RadioGroupH and RadioGroupV
+* some code cleanup
+
+4.3.3 - release 12 november 2003 - stable
+--------------------------------------------------------------------------
+* reimplemented class FileDialog
+* class CfgStore is now optimized for size
+* some compiling issues with Intel C++ and Borland C++
+* fixed install script for solaris
+
+4.3.4 - release 18 november 2003 - stable
+--------------------------------------------------------------------------
+* global functions test_mmx(), set_mmx() and reset_mmx() are members of class App from now
+* fonctions for access IO ports (outpb() & family) works OK with Intel C++ now
+* added static methods in the class App for asynchronous testing of modifier keys pressing
+  static bool App::IsShift(void);
+  static bool App::IsCtrl(void);
+  static bool App::IsAlt(void);
+* added FileDialog::BuildFullPathname(char* buffer);
+* added FileDialog::BuildRelativePathname(char* buffer);
+* fixed bug when FileDialog changes working directory in some cases
+* fixed bug with RadioGroups and not setting its int variable
+* added const char* GuiEvent::GetKeySymbolName(unsigned int code)
+
+4.3.5 - release 21 january 2004 - stable
+--------------------------------------------------------------------------
+* Window::WindowDrawPolygon(int n, int p[][2], int col) fixed passing color parameter
+* fixed Panel::draw() - no more drawing empty strings
+* fixed opened EditBox on TabPage switching
+* added backtrace list on unhandled signal occuring
+* fixed crash on non-exist file in CfgStore constructor
+* added bool CfgStore::IsValidStream(void);
+
+4.3.6 - release 10 february 2004 - stable
+--------------------------------------------------------------------------
+* fixed some problems with RAD utility
+* fixed Controls & TabPages visual corruption
+* added Window::AddPushButton(int x, int y, int w, int h, char* name, int key, DrawBuffer* back, ControlCall cb);
+* gcc 3.4.0 update
+* FGText draws only if has a text
+* listbox.h is no more included via widgets.h
+  use #include <fastgl/listbox.h> explicitly too
+
+4.3.7 - release 20 february 2004 - stable
+--------------------------------------------------------------------------
+* added class FGDialog
+* added: bool FileDialog::TestForOverwrite(void)
+* fixed ShowModal()
+* fixed CScheme & EditBox visual
+* changed size of text buffer for editbox (from 128 to 252 chars)
+* added '-pipe' gcc option to the makefile
+* changed name of some ColorShceme members
+  changed/fixed CScheme members
+    edit_back -> edit_background_active
+    edit_bord1 -> edit_border
+    edit fore -> edit_foreground
+    edit_disable -> edit_disable_fore
+    edit_bord2 -> edit_background
+
+4.9.0 - release 24 february 2004 - experimental
+--------------------------------------------------------------------------
+* added classes FGPoint, FGPointArray (inspired by QT)
+* enhnaced existing class FGRect
+* FGDrawBuffer::save_state(), restore_state().
+  all polygon functions are using FGPointArray instead (int, int [][2]).
+* All classes are with prexix FG* on now (DrawBuffer -> FGDrawBuffer).
+  but there are some macros to hide this behaviour.
+* all FGDrawBuffer by parameters overloaded methods like box(x,y,w.h,ink)
+  are now all-in-one.
+* polygon functions uses FGPointArray from now
+* class GuiEvent is renamed to FGEvent
+* some by parameters overloaded methods was removed (class FGWindow)
+* many other small changes
+* update doxygen config
+* updated win32.cpp a linkeyb.cpp for namespace fgl
+* char* -> const char*
+* int paper=-1 -> unsigned paper=UNDEFINED_COLOR
+* new FGInternalState (compound some global library variables)
+* _GTRANSP was renamed to _GCOLORKEY
+* added _GTRANSPARENT for alpha blending
+* default color_key was changed from 0xffffffff to 0x12345678
+
+4.9.1 - release 18 march 2004 - devel
+--------------------------------------------------------------------------
+* updated documentation  for FGMatrix, FGRect, FGPoint, FGRect, FGColor
+* added new class FGColor for powerfull color management with 140 predefined colors
+  see example fgcolor for more details
+* the classes FGRadioButton* has been slightly redesigned
+* fixed corruption of the input buffer in edit mode & FGUpDown controls
+* added FGButtonGroup*::ChangeItem(int *)
+* fixed FGText a FGImage removing and font changing
+* Added new event - TABSWITCHEVENT - for Tabage switch handling
+* added new virtual void FGWindow::OnTabSwitch(const char *)
+* added new virtual void FGAppw::OnTabSwitch(const char *)
+* added FGPushButton::AddBitmaps(FGDrawBuffer *pushed, FGDrawBuffer* disabled)
+
+4.9.2 - release 24 march 2004 - devel
+--------------------------------------------------------------------------
+* added new class FGColorPicker for better color picking and working
+  with RGB or HSV/HLS color models.
+* fixed bug with FGColor::SetHLS()
+* added FGColor::Opposite() for contrast color to one
+* added classses FG2Color, FG3Color, FG4Color & FGRelatedColor for
+  intuitive work with colors (find Contrast color to the one etc.)
+* FGSlider no more call CallBack function from constructor
+* fixed bug with multiple call Window::RunModal()
+* added default constructor FGColor::FGColor()
+* fixed bug with FGText drawing
+* added EDitBox:SetRange()
+
+4.9.3 - release 27 april 2004 - stable
+--------------------------------------------------------------------------
+* fixed bug in FGRect::FGRect(FGPoint a, FGPoint b);
+* fixed bug in FGPointArray::IsEmpty();
+* added FGBitmap::JpegSave(char* filename);
+* fixed bug when linux console keyboard driver was buffered keys
+* FGBitmap revisited
+* added int FGWindow::GetNumberOfTabPages(void);
+* added FGDialig::FGDialog(unsigned ink, unsigned paper, char* title, char* format, ...);
+* remove FGBitmap::Get/SetOriginalName();
+* added FGBitmap::FGBitmap()
+* added FGBitmap::LoadImage()
+* added FGBitmap::SaveImage()
+* fixed 16bit colors with FGColor class
+
+4.9.4 - release 30 may 2004 - stable
+--------------------------------------------------------------------------
+* fixed bugs with FGRect & FGMatrix
+* added FGCircle
+* documentation changes
+* fixed installation script for Kylix3
+
+4.9.5 - release 13 july 2004 - stable
+--------------------------------------------------------------------------
+* added class FGSize
+* added FGApp::AppClose()
+* fixed FGApp::Run() - no more corrupted messages in message queue
+* added FGMenuWindow::AddText()
+
+4.9.7 - release 28 september 2004 - stable
+--------------------------------------------------------------------------
+NOTE! This is update to 64bit aware
+These function chaged:
+
+void SetParam(int) -> void SetParameter(void *)
+int GetParam(void) -> void * GetParameter(void);
+
+5.0.2 - release 16 december 2004 - very stable :-)
+--------------------------------------------------------------------------
+NOTE: there are one big change: class Config was moved to the separate
+library called 'tinycfg'. More information is provided by documentation
+about class Config. If you get linker error about like: 'Config' not found,
+please add 'tinycfg' library to your project (aka -ltinycfg parameter).
+The side effect is the new config file layout (XML). The old format will
+be automatically coverted to the new amd old one will be saved with *.orig
+suffix. 
+
+* added basic XML support 
+* added 'domain' to all config methods: 'WriteInt(char* name, int value, char* domain=0)'
+  for more info see at Config documentation.
+* fixed an ancient bug with FGLinuxDriver (core dump)
+* some code optimalization (weak, regparm -O2 -fno-exceptions) was disabled - some 
+  newer gcc (3.4.x) has problems with ones.
+  
+5.1.0 - release 3 january 2005 - very stable :-)
+--------------------------------------------------------------------------  
+* added color gradient (via wonderfull AGG library - www.antigrain.com )
+* fixed SVGAlib compatibility
+* FGColorPicker is modal from now
+* fixed bug with FGColorPicekr & 16 bit color modes 
+  
+5.1.1 - release 14 january 2005 - very stable :-)
+--------------------------------------------------------------------------  
+* fixed 16bit colors with svgalib
+* fixed lrmi.c (push/pop gs)
+* added FGGradient::SetMode() and its example
+  
+5.5.0 - release 14 january 2005 - very stable :-)
+--------------------------------------------------------------------------  
+* added CYGWIN port
+* added support for Solaris 10
+* completely new build system (based on bash & make power)
+* fixed alpha blending with 16bit modes
+* revisited examples
+* much faster build on windows
+* some internal source reorganization
+* pane.h -> fgpane.h
+* base.h ->fgbase.h
+  
+5.5.4 - release 12 may 2005 - very stable :-)
+--------------------------------------------------------------------------  
+*
+* NOTE!!! THIS VERSION WAS SUCCESSFULLY PORTED TO AMD_64 PLATFORM (Fedora core 3 x86_64)
+*
+* added RIGHT,LEFT and BACKSPACE keys to FGFileDialog
+* added FGEditBox::OctalMode()
+* upgrade to latest tinyxml (2.3.4)
+* added Borland CBX projects
+
+5.5.5 - release 4 july 2005 - Stable
+--------------------------------------------------------------------------  
+* added building of new subset of OpenGUI - FGCore* - this is
+  architecture/graphic subsystem independent module contains these 
+  modules only: fgbase.o fgbitmap.o fgcolor.o fgconcurency.o fgdrawbuffer.o 
+  fgfontmanager.o fgmatrix.o fgshape.o resource.o
+ 
+* reenabled FGPaneProvider
+
+
+5.5.7 - release 20 dec 2005 - Stable
+--------------------------------------------------------------------------  
+* bump to tinyxml 2.4.2
+* added tinyxml tutorial
+
+Hi, nezmar:
+
+I made a patch for the FREETYPE2 support (fgttf) of OpenGUI.
+This patch speeds up font-rendering of non-ASCII characters, such as Chinese and Japanese.
+
+The original implementation only cached characters between 0x00 ~ 0xff.
+When rendering characters larger than 0xff, glyphes of this characters was retrieved, drawn,
+and forgot. The cache wasn't remeber them.
+
+The new implementation cached any characters if the cache has free space.
+It added timestamps on cached characters. When there is no free space in the cache,
+the timestamps will be used to compare and find out the oldest entry in the cache.
+I think it's helpful in a UTF-8 environment.
+
+Finally, sorry for my poor English.
+
+Regards,
+Tsung-Han Liu
+
+5.5.8 - release 6 feb 2006 - Stable
+--------------------------------------------------------------------------  
+    * fix for gcc 4.1.0 compiling
+    * new mouse acceleration code
+    * Installation with su now possible - $USER chaged to $UID
+    * fixed non-virtual dtor for FGConnector()
+    * fix for crash in mapRect()
+    * fix for map(FGPointArray)
+    * fix for bad truetype2 ;-(
+    * critical fix for crash on deleted window
+    * fix: explicit idcb reset
+
+5.5.14 - release 23 feb 2007 - Stable
+--------------------------------------------------------------------------  
+NOTE: This version IS NOT binary compatible with previous version! 
+   * bump to tinyxml 2.4.3
+   * fixed fbmode 1600x1200-8bit 60hz was fixed because od some instabilities on Matrox MGA 550 cards
+   * much improved mouse driver (especially warping)
+   * new mouse driver for generic linux 2.6.x /dev/mice (try '-mice' parameter)
+   * support for the case when OpenGUI was compiled&linked with 16bit colors mode and X Server runs in 32bit mode
+   * fixed bad modal window behavior
+   * fixed PRTRSC & CTRL+F12 keypress codes on linux 2.6.X
+   * reenabled: right click on unfocused window emits GETFOCUS & RIGTHCLICK events
+   * fixed some false valgrind issues
+   * changed signature: FGDialog::ShowYesNo(const char* str1="Yes", int key1='y', const char* str2="No", int key2='n' )
+   * added FGMatrix::double get_scale()
+   * added FGMatrix& FGMatrix::scale( double s)
+

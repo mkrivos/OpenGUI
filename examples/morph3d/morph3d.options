@@ -1,0 +1,1 @@
+LIBS += -lFGMesa -lOSMesa -lGL -L/usr/X11R6/lib64 -L/usr/X11R6/lib

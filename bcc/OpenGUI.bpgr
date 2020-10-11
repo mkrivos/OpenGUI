@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Project Group-->
+<projectgroup>
+  <project path="../xml/tinycfg.cbx"/>
+  <project path="fgl.cbx"/>
+  <project path="fgl16.cbx"/>
+  <project path="fgl32.cbx"/>
+</projectgroup>

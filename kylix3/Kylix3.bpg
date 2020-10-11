@@ -1,0 +1,40 @@
+#------------------------------------------------------------------------------
+VERSION = BWS.02.5
+#------------------------------------------------------------------------------
+ifndef ROOT
+ROOT = /usr/local/kylix3
+endif
+#------------------------------------------------------------------------------
+MAKE = make -$(MAKEFLAGS) -f$**
+DCC =dcc $<
+#------------------------------------------------------------------------------
+PROJECTS = tinycfg.a fgl.a fgl16.a fgl32.a FGMesa.a demo
+#------------------------------------------------------------------------------
+default: $(PROJECTS)
+#------------------------------------------------------------------------------
+
+fgl.a: fgl.bpr
+	$(ROOT)/bin/bpr2mak -t$(ROOT)/bin/deflib.gmk $<
+	make -$(MAKEFLAGS) -f$(basename $<).mak
+
+fgl16.a: fgl16.bpr
+	$(ROOT)/bin/bpr2mak -t$(ROOT)/bin/deflib.gmk $<
+	make -$(MAKEFLAGS) -f$(basename $<).mak
+
+fgl32.a: fgl32.bpr
+	$(ROOT)/bin/bpr2mak -t$(ROOT)/bin/deflib.gmk $<
+	make -$(MAKEFLAGS) -f$(basename $<).mak
+
+FGMesa.a: FGMesa.bpr
+	$(ROOT)/bin/bpr2mak -t$(ROOT)/bin/deflib.gmk $<
+	make -$(MAKEFLAGS) -f$(basename $<).mak
+
+demo: demo.bpr
+	$(ROOT)/bin/bpr2mak $<
+	make -$(MAKEFLAGS) -f$(basename $<).mak
+
+tinycfg.a: tinycfg.bpr
+	$(ROOT)/bin/bpr2mak -t$(ROOT)/bin/deflib.gmk $<
+	make -$(MAKEFLAGS) -f$(basename $<).mak
+
+

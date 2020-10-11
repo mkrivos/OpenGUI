@@ -1,0 +1,36 @@
+<?xml version="1.0" standalone="yes" ?>
+<xui>
+    <widget id="id0" label="This is my Window!" w="400" h="600" foreground="000000" background="FFFFFF" handler="MyHandler" frame="0">
+        <pushbutton id="id3" label="New Window" x="32" y="30" w="128" h="25" onclick="CreateWindow" hotkey="78" />
+        <pushbutton id="id4" label="Close Window" x="32" y="70" w="128" h="25" onclick="CloseWindow" hotkey="67" />
+        <pushbutton id="id5" label="Close Application" x="32" y="120" w="128" h="25" onclick="__CloseApplication" hotkey="65" selected="1" />
+        <editbox id="id7" label="Text Entry :" x="120" y="220" w="128" h="25" onclick="MyTextEntry" hotkey="84" scrambled="1" />
+        <editbox id="id8" label="Integer Entry :" x="120" y="250" w="128" h="25" onclick="MyIntegerEntry" hotkey="84" hexadecimal="1" />
+        <editbox id="id9" label="Double Entry :" x="120" y="280" w="128" h="25" onclick="MyDoubleEntry" hotkey="84" />
+        <checkbox id="id10" label="CheckBox" x="32" y="320" onclick="MyIntegerEntry" hotkey="67" />
+        <slidebar id="id15" x="32" y="350" onclick="MyIntegerEntry" horizontal="1" step="10" minimum="-100" maximum="100" />
+        <listbox id="id16" x="32" y="380" w="100" h="20" onclick="MyIntegerEntry" dropdown="5" />
+        <radiogroup id="id12" x="200" y="20" onclick="MyIntegerEntry" span="40">
+            <radiobutton label="prvy" x="200" y="20" hotkey="112" />
+            <radiobutton label="druhy" x="200" y="60" hotkey="100" />
+            <radiobutton label="treti" x="200" y="100" />
+            <radiobutton label="stvrty" x="200" y="140" />
+            <radiobutton label="piaty" x="200" y="180" />
+        </radiogroup>
+        <menubar>
+            <menu id="id13" label="File" hotkey="70" popup="id13_1">
+                <menupopup id="id13_1" w="200">
+                    <menuitem id="id13_1_1" label="Item 1" hotkey="1" />
+                    <menuitem id="id13_1_2" label="Item 2" hotkey="2" />
+                    <menuitem id="id13_1_3" label="Quit" onclick="__CloseApplication" hotkey="113" selected="1" />
+                </menupopup>
+            </menu>
+            <menu id="id14" label="Edit" onclick="__CloseApplication" hotkey="69">
+                <menupopup />
+            </menu>
+        </menubar>
+    </widget>
+    <widget id="id1" label="Yet another window" x="400" w="400" h="600" foreground="000000" background="FFFFFF" persistent="1" resize="1">
+        <text label="A text label" x="32" y="32" foreground="000000" background="FFFFFF" />
+    </widget>
+</xui>

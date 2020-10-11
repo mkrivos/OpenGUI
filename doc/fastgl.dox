@@ -1,0 +1,239 @@
+/**
+	@mainpage OpenGUI API & programers guide
+	<center>
+	<h5>Copyright 1996-2005 Marian Krivos</h5>
+	<h5>LGPL License</h5>
+	</center>
+	<hr>
+
+	@section overview Overview
+	- the Fast Graphics & Windowing Library
+	- the lightweight multi-platform library
+	- for GUI applications and games development with C++ on LINUX, WIN32 and SOLARIS
+	- the OpenGUI is fast, multi-platform, thread-safe 32-bit windowing/graphics
+	library for LINUX, WIN32 and SOLARIS. It can be used to create graphics applications
+	and games for these Operating Systems. This one can be used with GNU C++
+	(from ver. 2.95.1 up to 3.3), Visual C++ 6.0 or Borland C++ (from 5.0) C++ compilers.
+	The library	is robust, stable and is ready for applications that requires fast drawing.
+
+	@section features Features:
+
+	- fast, complex
+ and orthogonal implementation of GUI
+	- dynamic GUI creating via XML file format description (look for fgx module)
+	- multi-platform and standard ISO C++ code
+ without RTTI and Exceptions (templates are used marginally)
+	- thread-safe and reentrant code
+	- windowed or full-screen mode (win32 & linux)
+	- support for resolutions ranging from 320x200 up to 1600x1200
+	- the complete windowing system with buttons, menus, editboxes ...
+	- object-oriented and well designed API
+	- supports many common image formats: BMP, PCX, TGA, PNG, JPG, TIFF
+	- supports TTF fonts via TRUETYPE2 library
+	- full application development environment (configuration files, application object, ...)
+	- configuration files are implemented in separated library (tincfg) via simple XML file 
+	  format (look at Config module) 
+	- common dialog boxes for colors, fonts and file management
+	- professionally tested & actively used for many year (since 1996)
+	- and much more
+
+
+	The library consists of three layers. The first layer is a hand-coded
+	and fast assembler kernel. This layer does the biggest piece of hard work.
+	The second layer implements the API for drawing graphics primitives
+	like lines, rectangles, circles etc. This layer is comparable to Borland BGI API.
+	The third layer is written with C++ and offers a complete object set
+	for the GUI developer. This layer implements objects like edit boxes,
+	windows, buttons, menus, bitmaps etc, with addition of integrated
+	mouse & keyboards support. To create a simple demonstration that draws
+	on the screen a window captioned "HELLO WORLD", a button labelled "Finish"
+	and shows a mouse pointer only, these few lines are required:
+
+	@code
+
+	#include <fastgl/fastgl.h>
+
+	#ifdef FG_NAMESPACE
+	using namespace fgl;
+	#endif
+
+	int main(int argc, char **argv )
+	{
+	   FGApp MyApp(3,argc,argv,CDARK,APP_ENABLEALTX);
+	   FGWindow *MyWindow = new FGWindow(&MyWindow, 100, 100,200,100, "Window");
+	   MyWindow->set_fcolor(CRED);
+	   MyWindow->printf(54,15,"Hello World!\n");
+	   MyWindow->AddPushButton(60,45,80,21,"Exit app",'F', FGControl::Quit);
+	   MyApp.Run();
+	   return 0;
+	}
+	@endcode
+*/
+
+/**
+	@page Installation
+	To install the library, unpack OpenGUI-xxx.tar.bz2 to your hard disk.
+	You will get the directory OpenGUI-xxx containing two subdirectories: src and rad.
+	If you are compiling the library on LINUX, you will require root permissions.
+	To build the library, cd to the src directory and run make.
+	If the compilation succeeds, it will also installs libraries and headers
+	to their appropriate locations. Next, you may wish to compile examples
+	in a similar way in the examples dir.
+	The installation consists of some few header files and library files (libfgl.a,
+	fgl.lib or libfgl.so, depending on the platform.
+	That will be linked with your programs. During the installation (which
+	is performed automatically during the make) include files are copied
+	to the standard include directory /usr/include and library files to the library
+	directory /usr/lib . For a LINUX, a dynamic	version of the library is built as well.
+	Static library should be used for debugging purposes and the dynamic library can be
+	used for the final version of your software.
+*/
+
+/**
+	@defgroup Defines Global defines
+	global defines
+*/
+/**
+	@defgroup Enums Global enums
+	global enums
+*/
+/**
+	@defgroup Types Types
+	Types
+*/
+/**
+	@defgroup Globals Globals
+	Global objects
+*/
+/**
+	@defgroup Graphics Drawing graphics primitives
+	Drawing graphics primitives
+*/
+/**
+	@defgroup Colors Color managements
+	Color managements
+*/
+/**
+	@defgroup Misc Miscelanous functions
+	Miscelanous functions
+*/
+/**
+	@defgroup OpenGL Writing the 3D application with MesaGL library.
+	There is on some systems freely available OpenGL 1.3 implementation.
+	You can write an OpenGL compatible applications as native OpenGUI
+	apps. For this feature you must have downloaded MesaGL library
+	from www.mesa3d.org It is highly recomended to use latest release
+	of this SW (ver. 5.0 is available on now). There are only 8bit and 24bit
+	color depth support. You must link the addons library 'libFGMesa.a' too.
+	@see GLSurface
+*/
+/////////////////////////////////////////////////////////////////
+
+/**
+	@example "alpha.cpp"
+*/
+/**
+	@example "bgroup.cpp"
+*/
+/**
+	@example "gif.cpp"
+*/
+/**
+	@example "buttons.cpp"
+*/
+/**
+	@example "calc.cpp"
+*/
+/**
+	@example "cdialog.cpp"
+*/
+/**
+	@example "config.cpp"
+*/
+/**
+	@example "connect.cpp"
+*/
+/**
+	@example "cursor.cpp"
+*/
+/**
+	@example "double.cpp"
+*/
+/**
+	@example "editor.cpp"
+*/
+/**
+	@example "events.cpp"
+*/
+/**
+	@example "fdialog.cpp"
+*/
+/**
+	@example "fgcolor.cpp"
+*/
+/**
+	@example "font.cpp"
+*/
+/**
+	@example "fontsel.cpp"
+*/
+/**
+	@example "gears.cpp"
+*/
+/**
+	@example "gradient.cpp"
+*/
+/**
+	@example "hello.cpp"
+*/
+/**
+	@example "listbox.cpp"
+*/
+/**
+	@example "mandel.cpp"
+*/
+/**
+	@example "modal_dialog.cpp"
+*/
+/**
+	@example "newapi.cpp"
+*/
+/**
+	@example "pane.cpp"
+*/
+/**
+	@example "radiogroup.cpp"
+*/
+/**
+	@example "regress.cpp"
+*/
+/**
+	@example "tabpage.cpp"
+*/
+/**
+	@example "timer.cpp"
+*/
+/**
+	@example "ttf.cpp"
+*/
+/**
+	@example "updown.cpp"
+*/
+/**
+	@example "widgets.cpp"
+*/
+/**
+	@example "zgv.cpp"
+*/
+/**
+	@example "bitmap.cpp"
+*/
+/**
+	@example "fgxtest.cpp"
+*/
+/**
+	@example "geartrain.cpp"
+*/
+/**
+	@example "morph3d.cpp"
+*/

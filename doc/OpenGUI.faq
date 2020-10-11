@@ -1,0 +1,55 @@
+The OpenGUI FAQ - 6. Mar. 2000
+--------------------------------
+
+Q: Which color depths are supporeted under the OpenGUI?
+A: OpenGUI supports 8, 15, 16 & 24 (as 32) bit modes. You must select
+   only one from theses in library compile time (by editing base.h).
+
+Q: How I can do a snapshots of current screen?
+A: Press the PrintScreen (or F12 under WINDOWS) key and current screen 
+   will be saved under an unique name as BMP file.
+
+Q: What platforms & compilers are supported?
+A: LINUX - GCC & kernel 2.2.x and above, X11, svgalib or fbdev required
+   WINDOWS - Borland C++ 6
+, Visual C++ 6
+   SOLARIS - GCC
+      
+Q: Which tool is intended for full debugging OpenGUI apps?
+A: RHIDE under MSDOS supports graphics debugging without remote
+   access only. Under LINUX you can use X11 backend for debugging purposses too.
+
+Q: Under QNX, my app crash immediatelly after start.
+A: Do you use the '-ei' compiler switch? Runs 'int10' utility?
+
+Q: Under LINUX, my app core dumped immediatelly after start.
+A: Do you use the '-fPIC' compiler switch?
+
+Q: How the OpenGUI lib works?
+A: Under MSDOS it uses VESA VBE interface. As possible as it use
+   linear framebuffer. If your linear mode isn't supported on your card,
+   then OpenGUI uses banked mode (slowly).
+   Under LINUX, OpenGUI tests for X11 enviroment first, second FBDEV and uses one as possible as. If
+   fbdev isn't present, then OpenGUI looking for SVGALIB and runs one, else 
+   terminate with error.
+
+Q: My mouse under linux & svgalib don't work properly, what is wrong?
+A: You must edit '/etc/vga/libvga.config' for mouse option (mouse accel)
+   and set one to 'OFF'.
+   
+Q: What is the difference between GPL and LGPL (this library is LGPL) license?
+A: From my understanding (IANAL) the basic difference is that
+   if your code is GPL, then any code made derivitive of your code must
+   also be GPL (Unless you as the author give special permission).  The
+   LGPL (Now called the Lesser General Public License as opposed to the
+   Library Public License), your code can be linked to a closed source
+   program as long as the code to your program is available and object
+   files for the close-source program are also available to re-link to
+   your library in case anything changes (Again, permission can be given
+   by the author to bypass that).
+
+Q: My mouse don't work properly under LINUX. 
+A: If you have a standard PS/2 mouse, you can try '-ps2' cmdline switch 
+   to enable built-in support for one. Else you can add '-R' switch to
+   your gpm server startup script (this isn't compatible with X server).
+   

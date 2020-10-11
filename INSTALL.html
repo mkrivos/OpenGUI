@@ -1,0 +1,312 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta content="text/html; charset=ISO-8859-1"
+ http-equiv="content-type">
+  <title>INSTALL</title>
+</head>
+<body>
+<h1>Installation</h1>
+<hr style="width: 100%; height: 2px;"><br>
+<div style="margin-left: 40px;"><span
+ style="font-weight: bold; color: rgb(51, 51, 255);">simply type './</span><span
+ style="color: rgb(51, 51, 255);">build.sh</span><span
+ style="font-weight: bold; color: rgb(51, 51, 255);">' from your shell
+in OpenGUI directory, but read next lines before please!</span><br>
+</div>
+<br>
+<hr style="width: 100%; height: 2px;">
+<h3>Tested platfoms:</h3>
+<ol>
+  <li>Linux (tested on RH 7.3, Fedora Core 3 and Slackware 10.1)</li>
+  <ul>
+    <li>SVGALIB</li>
+    <li>FBDEV</li>
+    <li>X11</li>
+    <li>DGA</li>
+    <li>VESA (comming soon)<br>
+    </li>
+  </ul>
+  <li>Windows 98,ME,2000,XP (Native and Cygwin )</li>
+  <ul>
+    <li>DirectX 5 (fullscreen or Windowed mode)<br>
+    </li>
+  </ul>
+  <li>Solaris 8 &amp; 10</li>
+  <ul>
+    <li>X11<br>
+    </li>
+  </ul>
+</ol>
+<hr style="width: 100%; height: 2px;">
+<h3>Supported compilers:</h3>
+<ol>
+  <li>gcc 2.95 to 3.4.3</li>
+  <li>Borland C++ 5.x (Kylix 3, BCB6)</li>
+  <li>Visual C++ 6.0</li>
+</ol>
+<br>
+<hr style="width: 100%; height: 2px;">
+<h3>Other supported libraries (optional):</h3>
+<ol>
+  <li>OpenGL (MesaGL from 3.x)<br>
+  </li>
+  <li>libjpeg</li>
+  <li>libtiff</li>
+  <li>libpng</li>
+  <li>libttf</li>
+  <li>pthread (linux only)</li>
+</ol>
+<h3>Other tools</h3>
+<ol>
+  <li>doxygen (<a href="http://www.doxygen.org/">www.doxygen.org</a>)<br>
+  </li>
+</ol>
+<hr style="width: 100%; height: 2px;">
+<h3>PREINSTALL</h3>
+<ol>
+  <li>download and unpack source distribution (OpenGUI-*.tgz)</li>
+  <li>cd OpenGUI</li>
+  <li>edit file <span style="font-style: italic;">config.mak&nbsp; </span>if
+needed <span style="font-style: italic;">(see below for details)<br>
+    </span></li>
+  <li>execute ./build_all</li>
+  <li>it's all<span style="font-weight: bold;"></span></li>
+</ol>
+<h3><br>
+</h3>
+<h3>cflags.mak</h3>
+BTW: best place to glabal change of CFLAGS.<br>
+<br>
+<table style="width: 100%; text-align: left;" border="1" cellpadding="2"
+ cellspacing="2">
+  <tbody>
+    <tr>
+      <td style="vertical-align: top; font-weight: bold;">Variable<br>
+      </td>
+      <td style="vertical-align: top; font-weight: bold;">Default<br>
+      </td>
+      <td style="vertical-align: top; font-weight: bold;">Description<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">CXX<br>
+      </td>
+      <td style="vertical-align: top;">g++<br>
+      </td>
+      <td style="vertical-align: top;">C++ compiler<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">CC<br>
+      </td>
+      <td style="vertical-align: top;">gcc<br>
+      </td>
+      <td style="vertical-align: top;">C compiler<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">CFLAGS<br>
+      </td>
+      <td style="vertical-align: top;">-c -g -O -march=pentium<br>
+      </td>
+      <td style="vertical-align: top;">compile flags<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">LIBS<br>
+      </td>
+      <td style="vertical-align: top;">-ldl -lm -lstdc -ltinycfg<br>
+      </td>
+      <td style="vertical-align: top;">default runtime libraries<br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<h3><br>
+</h3>
+<h3>config.mak</h3>
+<table style="width: 80%; text-align: left;" border="1" cellpadding="2"
+ cellspacing="2">
+  <tbody>
+    <tr>
+      <td style="vertical-align: top;">
+      <pre style="background-color: rgb(204, 204, 204);">#########################################################<br>#<br># configuration to make OpenGUI library<br># <br>#########################################################<br><br># <br># enable X11 support<br>#<br><br>X11SUPPORT	=  -lXext -lX11<br><br># <br># enable X11 DGA2 support<br>#<br><br>#DGASUPPORT	= -lXxf86dga -lXext -lX11<br><br>#<br># enable PNG file format<br>#<br><br>#PNGSUPPORT	= -lpng -lz<br><br>#<br># enable TIFF file format<br>#<br><br>#TIFFSUPPORT	= -ltiff -ljpeg -lz<br><br>#<br># enable JPEG file format (needed by examples)<br>#<br><br>JPGSUPPORT	= -ljpeg<br><br>#<br># enable FREETYPE2 support<br>#<br><br>#TTFSUPPORT	= -lfreetype<br><br>#<br># enable THREAD-SAFE improvements (if you can acces library from more threads only)<br>#<br><br>THREADSUPPORT	= -lpthread<br><br><br>GLSUPPORT = YES<br><br>#########################################################<br><br></pre>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<br>
+You can enable/disable feature (comment/uncomment) simply with typing
+'#' at the start of line.<br>
+<br>
+By default are enabled only X11(linux) and pthread (all) support. In
+theory you can enable any of combination of switches at once. But you
+are limited with your installation. By example for TrueType font
+support you need FREETYPE2 library and this library isn't installed on
+most todays systems. Etc.<br>
+<br>
+There are also buit-in support for TGA/BMP/PCX images, FBDEV and
+SVGALIB backends.<br>
+<br>
+<table
+ style="text-align: left; width: 600px; height: 229px; background-color: rgb(204, 204, 204);"
+ border="1" cellpadding="2" cellspacing="2">
+  <tbody>
+    <tr>
+      <td style="vertical-align: top; font-weight: bold;">Feature<br>
+      </td>
+      <td style="vertical-align: top; font-weight: bold;">Linux<br>
+      </td>
+      <td style="vertical-align: top; font-weight: bold;">Solaris<br>
+      </td>
+      <td style="vertical-align: top; font-weight: bold;">Windows<br>
+      </td>
+      <td style="vertical-align: top; font-weight: bold;">Note<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">X11 backend<br>
+      </td>
+      <td style="vertical-align: top;">yes<br>
+      </td>
+      <td style="vertical-align: top;">yes</td>
+      <td style="vertical-align: top;">n/a<br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">DGA backend<br>
+      </td>
+      <td style="vertical-align: top;">yes</td>
+      <td style="vertical-align: top;">n/a</td>
+      <td style="vertical-align: top;">n/a</td>
+      <td style="vertical-align: top;"><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">PNG image<br>
+      </td>
+      <td style="vertical-align: top;">yes</td>
+      <td style="vertical-align: top;">yes</td>
+      <td style="vertical-align: top;">yes*</td>
+      <td style="vertical-align: top;"><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">TIFF image<br>
+      </td>
+      <td style="vertical-align: top;">yes</td>
+      <td style="vertical-align: top;">yes</td>
+      <td style="vertical-align: top;">yes*</td>
+      <td style="vertical-align: top;"><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">JPEG image**<br>
+      </td>
+      <td style="vertical-align: top;">yes</td>
+      <td style="vertical-align: top;">yes</td>
+      <td style="vertical-align: top;">yes*</td>
+      <td style="vertical-align: top;"><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">TTF fonts**<br>
+      </td>
+      <td style="vertical-align: top;">yes</td>
+      <td style="vertical-align: top;">yes</td>
+      <td style="vertical-align: top;">yes*</td>
+      <td style="vertical-align: top;"><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Multi-threading<br>
+      </td>
+      <td style="vertical-align: top;">yes</td>
+      <td style="vertical-align: top;">yes</td>
+      <td style="vertical-align: top;">yes</td>
+      <td style="vertical-align: top;"><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">OpenGL***<br>
+      </td>
+      <td style="vertical-align: top;">yes</td>
+      <td style="vertical-align: top;">yes*</td>
+      <td style="vertical-align: top;">yes*</td>
+      <td style="vertical-align: top;"><br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<br>
+* - you must install this one explicitly<br>
+** - only for 64K or 16M colors (not for 8-bit palette modes)<br>
+*** - <a href="http://www.mesa.org">www.mesa.org</a><br>
+<br>
+<hr style="width: 100%; height: 2px;">
+<h3>Standard bash &amp; make driven intsallation</h3>
+<ol>
+  <li>type ./<span style="font-weight: bold;">build.sh</span> <br>
+  </li>
+</ol>
+it runs these scripts:<br>
+<ul>
+  <li>compile</li>
+  <li>makedoc</li>
+  <li>install</li>
+  <li>examples</li>
+</ul>
+NOTE: <span style="color: rgb(255, 0, 0);">You can run any of these
+scripts individually. But 'install' and 'examples' must be next to
+'compile/install'</span><br>
+<br>
+<hr style="width: 100%; height: 2px;">
+<h3>CYGWIN steps</h3>
+<ol>
+  <li>cp /bin/make.exe /bin/gmake.exe</li>
+  <li>./build.sh<br>
+  </li>
+</ol>
+<hr style="width: 100%; height: 2px;">
+<h3>Kylix 3 steps</h3>
+<ol>
+  <li>open project group: OpenGUI/kylix3/Kylix3.bpg</li>
+  <li>choose 'Project/Build all projects' from menu</li>
+  <li>run ./install.sh from OpenGUI root directory</li>
+  <li>you can run ./makedoc.sh script too for generating documentation
+(via doxygen)<br>
+  </li>
+</ol>
+<hr style="width: 100%; height: 2px;">
+<h3>Borland C++ steps</h3>
+<ol>
+  <li>open project group: OpenGUI/bcc/bcc6prj.bpg</li>
+  <li>choose 'Project/Build all projects' from menu</li>
+  <li>copy lib/*.lib to $(BCC)/lib</li>
+  <li>copy include/fastgl/*.h to $(BCC)/include/fastgl/</li>
+  <li>you can run ./makedoc.sh script too for generating documentation
+(via doxygen)<br>
+  </li>
+</ol>
+<br>
+<hr style="width: 100%; height: 2px;">
+<h3>Examples</h3>
+There are cca. 20+ small examples of API using.&nbsp; These examples
+are builded automatically via ./examples.sh' script (which is invoked
+from 'built.sh' too). Some of examples don't work with each of
+supported platforms (MesaGL dependency).<br>
+<br>
+<hr style="width: 100%; height: 2px;">
+<h3>Documentation</h3>
+Run './makedoc.sh' script (which is invoked from 'built.sh' too) and
+all documentation will be generated into OpenGUI/doc/html directory -
+main file is: <a href="doc/html/index.html">index.html</a><br>
+<br>
+NOTE: <span style="color: rgb(255, 0, 0);">you must have installed a
+doxygen tool before!</span><br>
+<br>
+</body>
+</html>

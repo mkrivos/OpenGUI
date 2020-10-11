@@ -1,0 +1,201 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!-- C++Builder XML Project -->
+<PROJECT>
+  <MACROS>
+    <VERSION value="BCB.06.00"/>
+    <PROJECT value="..\lib\fgl16.lib"/>
+    <OBJFILES value="..\obj\bcc\16\dll.obj ..\obj\bcc\16\drivers.obj ..\obj\bcc\16\fastgl.obj 
+      ..\obj\bcc\16\listbox.obj ..\obj\bcc\16\resource.obj 
+      ..\obj\bcc\16\widgets.obj ..\obj\bcc\16\fgcolor.obj 
+      ..\obj\bcc\16\fgapp.obj ..\obj\bcc\16\fgmatrix.obj 
+      ..\obj\bcc\16\fggradient.obj ..\obj\bcc\16\win32.obj 
+      ..\obj\bcc\16\agg_rasterizer_scanline_aa.obj 
+      ..\obj\bcc\16\agg_sqrt_tables.obj ..\obj\bcc\16\agg_trans_affine.obj 
+      ..\obj\bcc\16\fgx.obj ..\obj\bcc\16\fgbase.obj ..\obj\bcc\16\fgbitmap.obj 
+      ..\obj\bcc\16\fgconcurency.obj ..\obj\bcc\16\fgcontrols.obj 
+      ..\obj\bcc\16\fgdrawbuffer.obj ..\obj\bcc\16\fgeditor.obj 
+      ..\obj\bcc\16\fgevent.obj ..\obj\bcc\16\fgfontmanager.obj 
+      ..\obj\bcc\16\fgpane.obj ..\obj\bcc\16\fgshape.obj 
+      ..\obj\bcc\16\fgscheme.obj ..\obj\bcc\16\fgtimer.obj"/>
+    <RESFILES value=""/>
+    <IDLFILES value=""/>
+    <IDLGENFILES value=""/>
+    <DEFFILE value=""/>
+    <RESDEPEN value="$(RESFILES)"/>
+    <LIBFILES value=""/>
+    <LIBRARIES value=""/>
+    <SPARELIBS value=""/>
+    <PACKAGES value=""/>
+    <PATHCPP value=".;..\src;..\src\win32;..\src\agg2"/>
+    <PATHPAS value=".;"/>
+    <PATHRC value=".;"/>
+    <PATHASM value=".;"/>
+    <LINKER value="TLib"/>
+    <USERDEFINES value="BPP16;INTO_FGL;FG_THREADED"/>
+    <SYSDEFINES value="NO_STRICT"/>
+    <MAINSOURCE value="fgl16.bpf"/>
+    <INCLUDEPATH value="..\src\agg2;..\src\win32;..\src;..;..\include\fastgl;$(BCB)\include;$(BCB)\include\vcl"/>
+    <LIBPATH value="..\src\agg2;..\src\win32;..\src;..;&quot;C:\Program Files\Borland\CBuilder5\Projects&quot;;$(BCB)\lib\obj;$(BCB)\lib"/>
+    <WARNINGS value="-w-par"/>
+    <LISTFILE value=""/>
+    <OTHERFILES value=""/>
+  </MACROS>
+  <OPTIONS>
+    <IDLCFLAGS value="-I..\src\agg2 -I..\src\win32 -I..\src -I.. -I..\include\fastgl 
+      -I$(BCB)\include -I$(BCB)\include\vcl -src_suffix cpp -DBPP16 -DINTO_FGL 
+      -DFG_THREADED -boa"/>
+    <CFLAG1 value="-O2 -Q -w- -Vx -Ve -X- -a8 -5 -b- -k -y -v -vi -c -tW -tWM"/>
+    <PFLAGS value="-N2..\obj\bcc\16 -N0..\obj\bcc\16 -$Y- -$L- -$D- -$A8 -v -JPHNE -M"/>
+    <AFLAGS value="/mx /w2 /zn"/>
+    <LFLAGS value="/P64"/>
+    <OTHERFILES value=""/>
+  </OPTIONS>
+  <LINKER>
+    <ALLOBJ value="$(OBJFILES)"/>
+    <ALLLIB value=""/>
+    <OTHERFILES value=""/>
+  </LINKER>
+  <FILELIST>
+      <FILE FILENAME="..\src\bcc\fgl16.bpf" FORMNAME="" UNITNAME="fgl16" CONTAINERID="BPF" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\src\dll.cpp" FORMNAME="" UNITNAME="dll" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\src\drivers.cpp" FORMNAME="" UNITNAME="drivers" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\src\fastgl.cpp" FORMNAME="" UNITNAME="fastgl" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\src\listbox.cpp" FORMNAME="" UNITNAME="listbox" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\src\resource.cpp" FORMNAME="" UNITNAME="resource" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\src\widgets.cpp" FORMNAME="" UNITNAME="widgets" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\src\fgcolor.cpp" FORMNAME="" UNITNAME="fgcolor.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\src\fgapp.cpp" FORMNAME="" UNITNAME="fgapp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\src\fgmatrix.cpp" FORMNAME="" UNITNAME="fgmatrix.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\src\fggradient.cpp" FORMNAME="" UNITNAME="fggradient.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\src\win32\win32.cpp" FORMNAME="" UNITNAME="win32" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\src\agg2\agg_rasterizer_scanline_aa.cpp" FORMNAME="" UNITNAME="agg_rasterizer_scanline_aa.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\src\agg2\agg_sqrt_tables.cpp" FORMNAME="" UNITNAME="agg_sqrt_tables.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\src\agg2\agg_trans_affine.cpp" FORMNAME="" UNITNAME="agg_trans_affine.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\src\fgx.cpp" FORMNAME="" UNITNAME="fgx.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\src\fgbase.cpp" FORMNAME="" UNITNAME="fgbase.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\src\fgbitmap.cpp" FORMNAME="" UNITNAME="fgbitmap.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\src\fgconcurency.cpp" FORMNAME="" UNITNAME="fgconcurency.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\src\fgcontrols.cpp" FORMNAME="" UNITNAME="fgcontrols.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\src\fgdrawbuffer.cpp" FORMNAME="" UNITNAME="fgdrawbuffer.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\src\fgeditor.cpp" FORMNAME="" UNITNAME="fgeditor.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\src\fgevent.cpp" FORMNAME="" UNITNAME="fgevent.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\src\fgfontmanager.cpp" FORMNAME="" UNITNAME="fgfontmanager.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\src\fgpane.cpp" FORMNAME="" UNITNAME="fgpane.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\src\fgshape.cpp" FORMNAME="" UNITNAME="fgshape.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\src\fgscheme.cpp" FORMNAME="" UNITNAME="fgscheme.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="..\src\fgtimer.cpp" FORMNAME="" UNITNAME="fgtimer.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+  </FILELIST>
+  <BUILDTOOLS>
+  </BUILDTOOLS>
+
+  <IDEOPTIONS>
+[Version Info]
+IncludeVerInfo=0
+AutoIncBuild=0
+MajorVer=1
+MinorVer=0
+Release=0
+Build=0
+Debug=0
+PreRelease=0
+Special=0
+Private=0
+DLL=0
+Locale=1051
+CodePage=1250
+
+[Version Info Keys]
+CompanyName=
+FileDescription=
+FileVersion=1.0.0.0
+InternalName=
+LegalCopyright=
+LegalTrademarks=
+OriginalFilename=
+ProductName=
+ProductVersion=1.0.0.0
+Comments=
+
+[HistoryLists\hlIncludePath]
+Count=7
+Item0=..\src\agg2;..\src\win32;..\src;..;..\include\fastgl;$(BCB)\include;$(BCB)\include\vcl
+Item1=..\src\agg2;..\src\win32;..\src;..;C:\Program Files\Borland\CBuilder5\Projects;$(BCB)\include;$(BCB)\include\vcl
+Item2=..\;..;C:\Program Files\Borland\CBuilder5\Projects;$(BCB)\include;$(BCB)\include\vcl
+Item3=..\;C:\Program Files\Borland\CBuilder5\Projects;$(BCB)\include;$(BCB)\include\vcl
+Item4=C:\Program Files\Borland\CBuilder5\Projects;$(BCB)\include;$(BCB)\include\vcl
+Item5=C:\Program Files\Borland\CBuilder5\Projects\;$(BCB)\include;$(BCB)\include\vcl
+Item6=$(BCB)\include;$(BCB)\include\vcl
+
+[HistoryLists\hlLibraryPath]
+Count=6
+Item0=..\src\agg2;..\src\win32;..\src;..;C:\Program Files\Borland\CBuilder5\Projects;$(BCB)\lib\obj;$(BCB)\lib
+Item1=..\;..;C:\Program Files\Borland\CBuilder5\Projects;$(BCB)\lib\obj;$(BCB)\lib
+Item2=..\;C:\Program Files\Borland\CBuilder5\Projects;$(BCB)\lib\obj;$(BCB)\lib
+Item3=C:\Program Files\Borland\CBuilder5\Projects;$(BCB)\lib\obj;$(BCB)\lib
+Item4=C:\Program Files\Borland\CBuilder5\Projects\;$(BCB)\lib\obj;$(BCB)\lib
+Item5=$(BCB)\lib\obj;$(BCB)\lib
+
+[HistoryLists\hlDebugSourcePath]
+Count=1
+Item0=$(BCB)\source\vcl
+
+[HistoryLists\hlConditionals]
+Count=5
+Item0=BPP16;INTO_FGL;FG_THREADED
+Item1=BPP8;INTO_FGL;FG_THREADED
+Item2=BPP8
+Item3=BPP32
+Item4=BPP16
+
+[HistoryLists\hlIntOutputDir]
+Count=5
+Item0=..\obj\bcc\16
+Item1=16
+Item2=8
+Item3=D:\OUTPUT\
+Item4=D:\OUTPUT
+
+[HistoryLists\hlFinalOutputDir]
+Count=4
+Item0=..\lib\
+Item1=..\lib
+Item2=D:\OUTPUT\
+Item3=D:\OUTPUT
+
+[HistoryLists\hIBPIOutputDir]
+Count=2
+Item0=D:\OUTPUT\
+Item1=D:\OUTPUT
+
+[HistoryLists\hlTlibPageSize]
+Count=3
+Item0=0x0040
+Item1=0x0020
+Item2=0x0010
+
+[Debugging]
+DebugSourceDirs=$(BCB)\source\vcl
+
+[Parameters]
+RunParams=
+Launcher=
+UseLauncher=0
+DebugCWD=
+HostApplication=
+RemoteHost=
+RemotePath=
+RemoteLauncher=
+RemoteCWD=
+RemoteDebug=0
+
+[Compiler]
+ShowInfoMsgs=0
+LinkDebugVcl=0
+LinkCGLIB=0
+
+[CORBA]
+AddServerUnit=1
+AddClientUnit=1
+PrecompiledHeaders=1
+  </IDEOPTIONS>
+</PROJECT>

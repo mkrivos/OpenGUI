@@ -1,0 +1,18 @@
+-examples
+-mesa/install
+-dep
+-kylix
+-solaris
+-win32
+-version
+-uninstall
+-jeden make
+examples/font (ttf isn't correct)
+solaris and timer example
+-CONNECT & 
+-fgx don't work
+-CREATE COLOR AND 16BIT MODE
+-16bit alpha
+DGA !!!
+timerexample & win32+solaris
+prepinac -4

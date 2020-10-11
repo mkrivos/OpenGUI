@@ -1,0 +1,28 @@
+BUGS
+
+* [END] key function in TextEditor
+* GLUT 
+
+soft ButtonGroups switch
+* 15bit <> 16bit 
+* mkdir in ROOT die
+* better mouse grabbing
+* FILEDIALOG - dirs with dot at the start
+* button group reimplementation
+* PNG + JPG in 8bit BPP
+???
+* MOUSEKEYS
+* scroll right
+* TAB+CTRL linux
+* color image 8bit
+* Xwin error handler
+alpha is red in alpha example
+truecolor colordialog
+font dialog
+VESA driver
+check box
+recursive mutex for solaris
+fix MOUSEKEYS
+fix PGUP in editor
+new wputc() and threading
+error in not padded textout

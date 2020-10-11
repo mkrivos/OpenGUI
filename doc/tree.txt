@@ -1,0 +1,230 @@
+.
+|-- COPYING
+|-- Doxyfile
+|-- OpenGUI ver_5_0.html
+|-- OpenGUI.faq
+|-- OpenGUI.lsm
+|-- OpenGUI.spec
+|-- bugs.txt
+|-- changes.txt
+|-- doc
+|   `-- images
+|       |-- CVS
+|       |   |-- Entries
+|       |   |-- Repository
+|       |   `-- Root
+|       |-- cdialog.png
+|       |-- check.png
+|       |-- editbox.png
+|       |-- fdialog.png
+|       |-- fntdlg.png
+|       |-- gradient.png
+|       |-- palette1.png
+|       |-- palette2.png
+|       |-- palette3.png
+|       |-- picker.png
+|       |-- point.png
+|       |-- prev_analog.gif
+|       |-- prev_compl.gif
+|       |-- prev_mono.gif
+|       |-- prev_tetrad.gif
+|       |-- prev_triad.gif
+|       |-- progress.png
+|       |-- pushbutt.png
+|       |-- radio.png
+|       |-- sliderh.png
+|       |-- sliderv.png
+|       |-- tabpages.png
+|       |-- tedit.png
+|       |-- wnd.png
+|       `-- xform.png
+|-- examples
+|-- fastgl.dox
+|-- include
+|   |-- base.h
+|   |-- fastgl.h
+|   |-- fgcolor.h
+|   |-- fggradient.h
+|   |-- fglmesa.h
+|   |-- fgmatrix.h
+|   |-- fgttf.h
+|   |-- fgx.h
+|   |-- internal.h
+|   |-- listbox.h
+|   |-- pane.h
+|   `-- widgets.h
+|-- lib
+|   |-- debug
+|   `-- release
+|-- main.gdt
+|-- main.gpr
+|-- obj
+|   |-- bcc
+|   |   |-- debug
+|   |   |   |-- o15
+|   |   |   |-- o16
+|   |   |   |-- o32
+|   |   |   `-- o8
+|   |   `-- release
+|   |       |-- o15
+|   |       |-- o16
+|   |       |-- o32
+|   |       `-- o8
+|   `-- gcc
+|       |-- debug
+|       |   |-- o15
+|       |   |-- o16
+|       |   |-- o32
+|       |   `-- o8
+|       `-- release
+|           |-- o15
+|           |-- o16
+|           |-- o32
+|           `-- o8
+|-- readme.txt
+|-- src
+|   |-- _fastgl.h
+|   |-- agg2
+|   |   |-- agg_basics.h
+|   |   |-- agg_clip_liang_barsky.h
+|   |   |-- agg_color_rgba.h
+|   |   |-- agg_color_rgba8.h
+|   |   |-- agg_dda_line.h
+|   |   |-- agg_gamma_functions.h
+|   |   |-- agg_gray8.h
+|   |   |-- agg_math.h
+|   |   |-- agg_pixfmt_gray8.h
+|   |   |-- agg_pixfmt_rgb555.h
+|   |   |-- agg_pixfmt_rgb565.h
+|   |   |-- agg_pixfmt_rgba32.h
+|   |   |-- agg_rasterizer_scanline_aa.cpp
+|   |   |-- agg_rasterizer_scanline_aa.h
+|   |   |-- agg_render_scanlines.h
+|   |   |-- agg_renderer_base.h
+|   |   |-- agg_renderer_scanline.h
+|   |   |-- agg_rendering_buffer.h
+|   |   |-- agg_scanline_u.h
+|   |   |-- agg_span_allocator.h
+|   |   |-- agg_span_generator.h
+|   |   |-- agg_span_gradient.h
+|   |   |-- agg_span_interpolator_linear.h
+|   |   |-- agg_sqrt_tables.cpp
+|   |   |-- agg_trans_affine.cpp
+|   |   `-- agg_trans_affine.h
+|   |-- base.cpp
+|   |-- bench.cpp
+|   |-- bitmap.cpp
+|   |-- config.h
+|   |-- detect.cpp
+|   |-- dll.cpp
+|   |-- dll.h
+|   |-- drivers.cpp
+|   |-- drivers.h
+|   |-- editor.cpp
+|   |-- fastgl.cpp
+|   |-- fgcolor.cpp
+|   |-- fggradient.cpp
+|   |-- fgmatrix.cpp
+|   |-- fgttf.cpp
+|   |-- fgx.cpp
+|   |-- gif.h
+|   |-- linux
+|   |   |-- linkeyb.cpp
+|   |   |-- linkeyb.h
+|   |   |-- linux.cpp
+|   |   |-- linux.h
+|   |   |-- lrmi.c
+|   |   |-- lrmi.h
+|   |   |-- vbe.h
+|   |   `-- vesa.c
+|   |-- listbox.cpp
+|   |-- mesa
+|   |   `-- fglmesa.cpp
+|   |-- other
+|   |   `-- textto.c
+|   |-- pane.cpp
+|   |-- pen
+|   |   |-- CVS
+|   |   |   |-- Entries
+|   |   |   |-- Repository
+|   |   |   `-- Root
+|   |   |-- dmc9512.cpp
+|   |   |-- dmc9512.h
+|   |   |-- pen_gunze.cpp
+|   |   `-- pen_gunze.h
+|   |-- resource.cpp
+|   |-- solaris
+|   |   |-- solaris.cpp
+|   |   `-- solaris.h
+|   |-- timer.cpp
+|   |-- user.cpp
+|   |-- widgets.cpp
+|   |-- win32
+|   |   |-- mydirent.cpp
+|   |   |-- mydirent.h
+|   |   |-- win32.cpp
+|   |   `-- win32.h
+|   `-- x11
+|-- tree.txt
+|-- wishes.txt
+`-- xml
+    |-- CVS
+    |   |-- Entries
+    |   |-- Entries.Log
+    |   |-- Repository
+    |   `-- Root
+    |-- build.linux
+    |-- build.solaris
+    |-- changes.txt
+    |-- devcpp
+    |   |-- CVS
+    |   |   |-- Entries
+    |   |   |-- Repository
+    |   |   `-- Root
+    |   |-- tinycfg.dev
+    |   `-- tinycfg.layout
+    |-- gcc
+    |   |-- CVS
+    |   |   |-- Entries
+    |   |   |-- Repository
+    |   |   `-- Root
+    |   |-- libtinycfg.a
+    |   |-- libtinycfg.so
+    |   |-- lo
+    |   |   |-- CVS
+    |   |   |   |-- Entries
+    |   |   |   |-- Repository
+    |   |   |   `-- Root
+    |   |   |-- tinycfg.o
+    |   |   |-- tinystr.o
+    |   |   |-- tinyxml.o
+    |   |   |-- tinyxmlerror.o
+    |   |   `-- tinyxmlparser.o
+    |   |-- o
+    |   |   |-- CVS
+    |   |   |   |-- Entries
+    |   |   |   |-- Repository
+    |   |   |   `-- Root
+    |   |   |-- tinycfg.o
+    |   |   |-- tinystr.o
+    |   |   |-- tinyxml.o
+    |   |   |-- tinyxmlerror.o
+    |   |   `-- tinyxmlparser.o
+    |   |-- tinycfg.gdt
+    |   |-- tinycfg.gpr
+    |   |-- tinycfg2.gdt
+    |   |-- tinycfg2.gpr
+    |   |-- tinycfg_dynamic.mak
+    |   `-- tinycfg_static.mak
+    |-- readme.dox
+    |-- tinycfg.cpp
+    |-- tinycfg.h
+    |-- tinystr.cpp
+    |-- tinystr.h
+    |-- tinyxml.cpp
+    |-- tinyxml.h
+    |-- tinyxmlerror.cpp
+    |-- tinyxmlparser.cpp
+    `-- xmltest.cpp
+
+51 directories, 176 files

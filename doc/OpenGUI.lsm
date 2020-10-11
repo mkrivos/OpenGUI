@@ -1,0 +1,26 @@
+Begin3
+Title:          OpenGUI (formerly FastGL)
+Version:        5.5.7
+Entered-date:   20 dec 2005
+Description:    OpenGUI is a high-Level C/C++ graphics library built upon a fast, 
+		low-level x86 asm graphics kernel. OpenGUI provides 2D drawing 
+		primitives and an event-driven windowing API for easy 
+		application development, and it supports the BMP image file 
+		format. It's very powerful, but very easy to use. You can write 
+		apps in the old Borland BGI style or in a windowed style like 
+		QT. OpenGUI supports the keyboard and mouse as event sources, 
+		and the Linux framebuffer/svgalib as drawing backends. 
+		Mesa3D is also supported under Linux & Win32. All 8, 15, 16 
+		and 32-bit color modes are available currently.
+                Ports to WINDOWS, SOLARIS and LINUX exist.
+Requirements:   For framebuffer support under Linux, kernel 2.2.x with enabled 
+                framebuffer is required, else SVGALIB library is needed. X11
+		support include DGA 2 also works.
+Keywords:       graphics, SVGA, library, LINUX, SOLARIS, FRAMEBUFFER DGA2, X11
+Author:         Marian Krivos (nezmar@atlas.sk)
+Maintained-by:  Marian Krivos (nezmar@atlas.sk)
+Primary-site:   http://www.tutok.sk/fastgl
+Alternate-site: 
+Platforms:      Linux/Intel ; WINDOWS 9x/ME/2000/XP/2003, Solaris Intel
+Copying-policy: LGPL 2.1
+End

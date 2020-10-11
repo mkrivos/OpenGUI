@@ -1,0 +1,10 @@
+USEUNIT("zgv.cpp");
+USELIB("..\..\lib\bcc\libjpeg.lib");
+USELIB("..\..\lib\bcc\libpng.lib");
+USELIB("..\..\lib\bcc\zlib.lib");
+USELIB("fgl16.lib");
+//---------------------------------------------------------------------------
+This file is used by the project manager only and should be treated like the project file
+
+
+main

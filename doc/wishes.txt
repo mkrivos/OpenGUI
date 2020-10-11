@@ -1,0 +1,36 @@
+TODO for OpenGUI from 4.2.0 - Nezmar
+
+-	Tree view widget
+-	multi-line edit
+-	scroll bar for windows
+-	better builder
+*-	notebook windows
+-	hidden listbox
+*-	mesa3d support
+*-	DGA 2.0 version
+*-	DirectX version
+-	ALIGN for widgets
+*-	/usr/local/lib
+*-	mouse out of sreeen
+*-	hex data config
+*-	alpha blending
+*-	thread safe
+*-	copy mouse cursor
+*-	hw acceleration
+-	MMX alpha blending
+*-	virtual screen
+*-	on the fly mode changes
+*-	new cursor API with hw support
+-	copy constructors
+*-	double & triple buffering
+*-	class FGScreen for physical screens & accel
+-	default controls for ENTER
+*-	TGA support
+*-	remove silly -fPIC compiler flag under LINUX
+*-	8bit palette
+*-	mtrr to linuxdrv
+*-	vsync
+-	fast screenTOscreen copy
+*-	complete DGA 2 driver
+*-	new schemes colors, fonts
+-	window icon

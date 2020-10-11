@@ -1,0 +1,151 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!-- C++Builder XML Project -->
+<PROJECT>
+  <MACROS>
+    <VERSION value="BCB.06.10"/>
+    <PROJECT value="../lib/fgl.a"/>
+    <OBJFILES value="../obj/bcc/8/fgbase.o ../obj/bcc/8/fgbitmap.o ../obj/bcc/8/fgscheme.o 
+      ../obj/bcc/8/fgx.o ../obj/bcc/8/fgshape.o ../obj/bcc/8/drivers.o 
+      ../obj/bcc/8/fgmatrix.o ../obj/bcc/8/fgcolor.o ../obj/bcc/8/fgttf.o 
+      ../obj/bcc/8/fgpane.o ../obj/bcc/8/fgtimer.o ../obj/bcc/8/fggradient.o 
+      ../obj/bcc/8/fgeditor.o ../obj/bcc/8/fastgl.o ../obj/bcc/8/listbox.o 
+      ../obj/bcc/8/resource.o ../obj/bcc/8/widgets.o ../obj/bcc/8/detect.o 
+      ../obj/bcc/8/dll.o ../obj/bcc/8/linkeyb.o ../obj/bcc/8/linux.o 
+      ../obj/bcc/8/agg_rasterizer_scanline_aa.o ../obj/bcc/8/agg_sqrt_tables.o 
+      ../obj/bcc/8/agg_trans_affine.o ../obj/bcc/8/fgconcurency.o 
+      ../obj/bcc/8/fgcontrols.o ../obj/bcc/8/fgdrawbuffer.o ../obj/bcc/8/fgapp.o 
+      ../obj/bcc/8/fgevent.o ../obj/bcc/8/fgfontmanager.o"/>
+    <RESFILES value=""/>
+    <DEFFILE value=""/>
+    <RESDEPEN value="$(RESFILES)"/>
+    <LIBFILES value=""/>
+    <LIBRARIES value=""/>
+    <PACKAGES value="rtl.bpi visualclx.bpi dataclx.bpi visualdbclx.bpi netclx.bpi 
+      netdataclx.bpi xmlrtl.bpi indy.bpi webdsnapclx.bpi websnapclx.bpi 
+      soaprtl.bpi"/>
+    <PATHCPP value=".;../src:../src/linux:../src/agg2"/>
+    <PATHPAS value=".;"/>
+    <PATHRC value=".;"/>
+    <PATHASM value=".;"/>
+    <LINKER value="ar"/>
+    <USERDEFINES value="INTO_FGL:__signed__:BPP8:X11_DRIVER:FG_PNG:FG_JPEG:FG_TTF:FG_THREADED:_DEBUG"/>
+    <SYSDEFINES value=""/>
+    <MAINSOURCE value="fgl.bpf"/>
+    <INCLUDEPATH value="../src/agg2:../src:../include/fastgl:$(BCB)/include/stlport:$(BCB)/include:$(BCB)/include/vcl:/usr/include:/usr/include/freetype2:../src/linux:../xml"/>
+    <LIBPATH value="../src/agg2:../src/linux:../src:..:$(BCB)/lib/obj:$(BCB)/lib:/usr/lib:/lib:/usr/X11R6/lib:$(BCB)/bin"/>
+    <WARNINGS value="-w-par"/>
+    <LISTFILE value=""/>
+    <OTHERFILES value=""/>
+  </MACROS>
+  <OPTIONS>
+    <CFLAG1 value="-O2 -Q -w- -P -Vx -Ve -RT- -X- -A -r- -a8 -5 -b- -k -y -v -vi- -c -t"/>
+    <PFLAGS value="-N2../obj/bcc/8 -N0../obj/bcc/8 -$Y+ -$W -$O- -$A8 -v -JPHNE -M"/>
+    <AFLAGS value="/mx /w2 /zd"/>
+    <LFLAGS value="-rsc"/>
+  </OPTIONS>
+  <LINKER>
+    <ALLOBJ value="$(OBJFILES)"/>
+    <ALLLIB value=""/>
+  </LINKER>
+  <FILELIST>
+      <FILE FILENAME="fgl.bpf" FORMNAME="" UNITNAME="fgl" CONTAINERID="BPF" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="../src/fgbase.cpp" FORMNAME="" UNITNAME="fgbase.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="../src/fgbitmap.cpp" FORMNAME="" UNITNAME="fgbitmap.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="../src/fgscheme.cpp" FORMNAME="" UNITNAME="fgscheme" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="../src/fgx.cpp" FORMNAME="" UNITNAME="fgx" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="../src/fgshape.cpp" FORMNAME="" UNITNAME="fgshape" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="../src/drivers.cpp" FORMNAME="" UNITNAME="drivers.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="../src/fgmatrix.cpp" FORMNAME="" UNITNAME="fgmatrix" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="../src/fgcolor.cpp" FORMNAME="" UNITNAME="fgcolor" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="../src/fgttf.cpp" FORMNAME="" UNITNAME="fgttf.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="../src/fgpane.cpp" FORMNAME="" UNITNAME="fgpane" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="../src/fgtimer.cpp" FORMNAME="" UNITNAME="fgtimer.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="../src/fggradient.cpp" FORMNAME="" UNITNAME="fggradient.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="../src/fgeditor.cpp" FORMNAME="" UNITNAME="fgeditor.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="../src/fastgl.cpp" FORMNAME="" UNITNAME="fastgl.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="../src/listbox.cpp" FORMNAME="" UNITNAME="listbox.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="../src/resource.cpp" FORMNAME="" UNITNAME="resource.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="../src/widgets.cpp" FORMNAME="" UNITNAME="widgets.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="../src/detect.cpp" FORMNAME="" UNITNAME="detect.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="../src/dll.cpp" FORMNAME="" UNITNAME="dll.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="../src/linux/linkeyb.cpp" FORMNAME="" UNITNAME="linkeyb.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="../src/linux/linux.cpp" FORMNAME="" UNITNAME="linux.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="../src/agg2/agg_rasterizer_scanline_aa.cpp" FORMNAME="" UNITNAME="agg_rasterizer_scanline_aa.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="../src/agg2/agg_sqrt_tables.cpp" FORMNAME="" UNITNAME="agg_sqrt_tables.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="../src/agg2/agg_trans_affine.cpp" FORMNAME="" UNITNAME="agg_trans_affine.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="../src/fgconcurency.cpp" FORMNAME="" UNITNAME="fgconcurency.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="../src/fgcontrols.cpp" FORMNAME="" UNITNAME="fgcontrols.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="../src/fgdrawbuffer.cpp" FORMNAME="" UNITNAME="fgdrawbuffer.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="../src/fgapp.cpp" FORMNAME="" UNITNAME="fgapp.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="../src/fgevent.cpp" FORMNAME="" UNITNAME="fgevent.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="../src/fgfontmanager.cpp" FORMNAME="" UNITNAME="fgfontmanager.cpp" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+  </FILELIST>
+  <BUILDTOOLS>
+  </BUILDTOOLS>
+
+  <FILES>
+    <FILE type="override" value="../src/fgapp.cpp" translator="Auto">
+      <CFLAG1 value=" -O2 -AT"/>
+    </FILE>
+    <FILE type="override" value="../src/fgbase.cpp" translator="Auto">
+      <CFLAG1 value=" -AT"/>
+      <WARNOPTSTR value=" -AT"/>
+    </FILE>
+  </FILES>
+
+  <IDEOPTIONS>
+[HistoryLists\hlIncludePath]
+Count=8
+Item0=../src/agg2:../src:../include/fastgl:$(BCB)/include/stlport:$(BCB)/include:$(BCB)/include/vcl:/usr/include:/usr/include/freetype2:../src/linux:../xml
+Item1=../src/agg2:../src:../include/fastgl:$(BCB)/include/stlport:$(BCB)/include:$(BCB)/include/vcl:/usr/include:/usr/include/freetype2:../src/linux
+Item2=../src:../include/fastgl:$(BCB)/include/stlport:$(BCB)/include:$(BCB)/include/vcl:/usr/include:/usr/include/freetype2:../src/linux
+Item3=../src:../include/fastgl:$(BCB)/include/stlport:$(BCB)/include:$(BCB)/include/vcl:/usr/include:/usr/include/freetype2
+Item4=../src:..:$(BCB)/include/stlport:$(BCB)/include:$(BCB)/include/vcl:/usr/include:/usr/include/freetype2
+Item5=../:..:$(BCB)/include/stlport:$(BCB)/include:$(BCB)/include/vcl:/usr/include:/usr/include/freetype2
+Item6=../:..:$(BCB)/include/stlport:$(BCB)/include:$(BCB)/include/vcl:/usr/include
+Item7=/work/OpenGUI/src2:$(BCB)/include/stlport:$(BCB)/include:$(BCB)/include/vcl:/usr/include
+
+[HistoryLists\hlLibraryPath]
+Count=4
+Item0=../src/agg2:../src/linux:../src:..:$(BCB)/lib/obj:$(BCB)/lib:/usr/lib:/lib:/usr/X11R6/lib:$(BCB)/bin
+Item1=../src:..:$(BCB)/lib/obj:$(BCB)/lib:/usr/lib:/lib:/usr/X11R6/lib:$(BCB)/bin
+Item2=../:..:$(BCB)/lib/obj:$(BCB)/lib:/usr/lib:/lib:/usr/X11R6/lib:$(BCB)/bin
+Item3=/work/OpenGUI/src2:$(BCB)/lib/obj:$(BCB)/lib:/usr/lib:/lib:/usr/X11R6/lib:$(BCB)/bin
+
+[HistoryLists\hlConditionals]
+Count=9
+Item0=INTO_FGL:__signed__:BPP8:X11_DRIVER:FG_PNG:FG_JPEG:FG_TTF:FG_THREADED:_DEBUG
+Item1=INTO_FGL:__signed__:BPP8:X11_DRIVER:FG_PNG:FG_JPEG:FG_TTF:FG_THREADED
+Item2=_DEBUG:__signed__:BPP8:X11_DRIVER:FG_PNG:FG_JPEG:FG_TTF
+Item3=_DEBUG:__signed__:BPP8:X11_DRIVER:DGA_DRIVER:FG_PNG:FG_JPEG:FG_TTF
+Item4=_DEBUG:__signed__:BPP8:X11_DRIVER
+Item5=_DEBUG:__signed__:BPP8
+Item6=_DEBUG:__signed__
+Item7=_DEBUG:__signed__=signed
+Item8=_DEBUG
+
+[HistoryLists\hlIntOutputDir]
+Count=2
+Item0=../obj/bcc/8
+Item1=8
+
+[HistoryLists\hlFinalOutputDir]
+Count=2
+Item0=../lib/
+Item1=../lib
+
+[Debugging]
+DebugSourceDirs=
+
+[Parameters]
+RunParams=
+Launcher=/usr/X11R6/bin/xterm -T KylixDebuggerOutput -e bash -i -c %debuggee%
+UseLauncher=0
+DebugCWD=
+HostApplication=
+
+[Compiler]
+ShowInfoMsgs=0
+LinkDebugVcl=0
+  </IDEOPTIONS>
+</PROJECT>

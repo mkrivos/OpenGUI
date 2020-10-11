@@ -1,0 +1,11 @@
+prefix=/usr
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: alsa
+Description: OpenGUI - Library
+Version: 5.5.7
+Requires: 
+Libs: -L${libdir} -lfgl -lm -ldl -lpthread -ljpeg
+Cflags: -I${includedir}

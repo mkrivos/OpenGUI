@@ -1,0 +1,45 @@
+<?xml version="1.0" standalone="yes" ?>
+<tinycfg>
+    <bool name="foo" val="true" />
+    <foo>
+        <bar>
+            <bool name="foo" val="false" />
+        </bar>
+    </foo>
+    <int name="integer_variable2" val="-1" />
+    <double name="double_variable" val="3.140000" />
+    <string name="string_variable" val="Hello, world &lt;&gt; &apos; " />
+    <bool name="bool_variable" val="true" />
+    <hex name="hex_variable" val="000000000000000032000000640000006400000032000000c800000064000000" len="32" />
+    <nejaka_grupa />
+    <mayapp>
+        <data>
+            <bank0 />
+        </data>
+    </mayapp>
+    <bool name="bool_array" range="3">
+        <item val="true" />
+        <item val="false" />
+        <item val="true" />
+    </bool>
+    <int name="int_array" range="3">
+        <item val="1" />
+        <item val="0" />
+        <item val="1" />
+    </int>
+    <double name="double_array" range="3">
+        <item val="3.140000" />
+        <item val="26346346643576.746094" />
+        <item val="-0.000320" />
+    </double>
+    <string name="str_array" range="3">
+        <item val="fdsfsd" />
+        <item val="26346346643576.7456" />
+        <item val="Jano ma maju" />
+    </string>
+    <hex name="hex_array" len="12" range="3">
+        <item val="666473667364003236333436" />
+        <item val="323633343633343636343335" />
+        <item val="4a616e6f206d61206d616a75" />
+    </hex>
+</tinycfg>
