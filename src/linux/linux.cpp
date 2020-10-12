@@ -32,7 +32,7 @@
 
 #include "fgevent.h"
 
-#define MY_SIGNAL	SIGUNUSED		// SIGUSR2, SIGUNUSED
+#define MY_SIGNAL	SIGUSR2		// SIGUSR2, SIGUNUSED
 
 #ifdef FG_NAMESPACE
 namespace fgl {

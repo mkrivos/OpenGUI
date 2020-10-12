@@ -14,11 +14,11 @@ build_opengui()
 {
 	cd src
 	echo 'Building library for 8-bit colors ...'
-	gmake -j 2 -f Makefile $1 BPP=8 LIBNAME=fgl
+	make -j 12 -f Makefile $1 BPP=8 LIBNAME=fgl
 	echo 'Building library for 16-bit colors ...'
-	gmake -j 2 -f Makefile $1 BPP=16 LIBNAME=fgl16
+	make -j 12 -f Makefile $1 BPP=16 LIBNAME=fgl16
 	echo 'Building library for 32-bit colors ...'
-	gmake -j 2 -f Makefile $1 BPP=32 LIBNAME=fgl32
+	make -j 12 -f Makefile $1 BPP=32 LIBNAME=fgl32
 	cd ..
 }
 

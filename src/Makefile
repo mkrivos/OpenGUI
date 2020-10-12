@@ -3,7 +3,7 @@ include ../config.mak
 include ../cflags.mak
 
 ifndef BPP
-BPP = 8
+BPP = 32
 LIBNAME	= fgl
 endif
 
@@ -93,11 +93,11 @@ OPTIONS	+= -DDGA_DRIVER
 endif
 
 ifdef PNGSUPPORT
-OPTIONS	+= -DFG_PNG
+OPTIONS	+= -DFG_PNGx
 endif
 
 ifdef JPGSUPPORT
-OPTIONS	+= -DFG_JPEG
+OPTIONS	+= -DFG_JPEGx
 endif
 
 ifdef TIFFSUPPORT
