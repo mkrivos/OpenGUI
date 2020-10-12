@@ -1,7 +1,9 @@
 cmake_minimum_required(VERSION 3.18)
 project(OpenGUI)
 
-ADD_DEFINITIONS ( -O2 -fno-exceptions -DFG_THREADED -D_REENTRANT -DINTO_FGL -DFG_TTF -DFG_PNGx -DFG_JPEGx -DX11_DRIVER ) 
+set(BUILD_SHARED_LIBS ON)
+
+ADD_DEFINITIONS (-fno-exceptions  ) 
 
 SET (FGL_SRCS
 src/detect.cpp
@@ -34,16 +36,50 @@ src/linux/linkeyb.cpp
 src/linux/linux.cpp 
 src/agg2/agg_rasterizer_scanline_aa.cpp
 src/agg2/agg_sqrt_tables.cpp
-src/agg2/agg_trans_affine.cpp )
+src/agg2/agg_trans_affine.cpp 
+xml/tinystr.cpp
+xml/tinyxml.cpp
+xml/tinyxmlerror.cpp
+xml/tinyxmlparser.cpp
+xml/xmlconfig.cpp
+)
 
 INCLUDE_DIRECTORIES ( xml src include/fastgl src/linux src/agg2 /usr/X11R6/include /usr/include/freetype2 /opt/csw/include /opt/csw/include/freetype2 )
 
-ADD_LIBRARY ( fgl     EXCLUDE_FROM_ALL ${FGL_SRCS})
-ADD_LIBRARY ( fgl15   EXCLUDE_FROM_ALL ${FGL_SRCS})
-ADD_LIBRARY ( fgl16   EXCLUDE_FROM_ALL ${FGL_SRCS})
-ADD_LIBRARY ( fgl32   ${FGL_SRCS})
+ADD_LIBRARY(fgl32   ${FGL_SRCS})
+target_include_directories(fgl32 
+    PRIVATE
+         xml src src/linux src/agg2 
+    PUBLIC
+         include
+)
+target_compile_definitions(fgl32
+    PRIVATE
+        INTO_FGL 
+        X11_DRIVER
+    PUBLIC
+        FG_THREADED 
+        D_REENTRANT 
+        FG_TTF 
+        FG_PNGx 
+        FG_JPEGx 
+        FASTGL_BPP=32
+        #TRUE_COLORS
+)
+target_link_libraries(fgl32 
+    PUBLIC
+        Xext
+        X11
+        freetype
+        pthread
+        dl
+        m
+    )
 
-SET_TARGET_PROPERTIES( fgl    PROPERTIES COMPILE_FLAGS "${CFLAGS} -DBPP8" )
-SET_TARGET_PROPERTIES( fgl16  PROPERTIES COMPILE_FLAGS "${CFLAGS} -DBPP16" )
-SET_TARGET_PROPERTIES( fgl15  PROPERTIES COMPILE_FLAGS "${CFLAGS} -DBPP15" )
-SET_TARGET_PROPERTIES( fgl32  PROPERTIES COMPILE_FLAGS "${CFLAGS} -DBPP32" )
+set(target hello)
+add_executable(${target} examples/${target}/${target}.cpp)
+target_link_libraries(${target} fgl32)
+
+set(target alpha)
+add_executable(${target} examples/${target}/${target}.cpp)
+target_link_libraries(${target} fgl32)

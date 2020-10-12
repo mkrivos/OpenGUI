@@ -1,8 +1,0 @@
-USELIB("..\..\src\fgl.lib");
-USEDEF("OpenGUI.def");
-USEUNIT("cursor.cpp");
-//---------------------------------------------------------------------------
-This file is used by the project manager only and should be treated like the project file
-
-
-main
