@@ -32,11 +32,14 @@ src/fgx.cpp
 src/listbox.cpp
 src/resource.cpp
 src/widgets.cpp
+
 src/linux/linkeyb.cpp
 src/linux/linux.cpp 
+
 src/agg2/agg_rasterizer_scanline_aa.cpp
 src/agg2/agg_sqrt_tables.cpp
 src/agg2/agg_trans_affine.cpp 
+
 xml/tinystr.cpp
 xml/tinyxml.cpp
 xml/tinyxmlerror.cpp
