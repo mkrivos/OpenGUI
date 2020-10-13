@@ -1,0 +1,17 @@
+- viacnasobne komentare
+- inteligente usporiadavanie prvkov podla polohy
+- editor straca text pri zmene fontu
+- button mask
+- menuwindow
+- priama kompilacia
+- generovanie makefile
+- poloha okna mimo rozsah a jeho zobrazovanie pri navrhu
+- alternativne generovanie pre nove API
+- color dialog pre 16 a 24bit farby
+- moznost generovania kodu pre konkretny callback
+- nazvy generovanych tried pre nove API
+- kopirovanie grup prvkov
+- zmena velkosti prvku mysou
+- zmena typu prvku za behu
+- novy format ukladania suboru
+ 

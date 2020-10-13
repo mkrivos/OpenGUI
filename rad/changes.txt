@@ -1,0 +1,78 @@
+WISHES are:
+- import objects from other projects
+- defaults for variables
+- your own code inserting
+- templates
+- global preperty change
+- root window support
+
+Change log for OpenGUI Sourcer Utility
+=====================
+
+0.1 released May 1999
+---------------------------
+
+* First official release
+
+0.2 released July 1999
+----------------------------
+
+* fix some bugs in editor.c
+* add :Save changes: dialog to editor
+* many improvements in a code generator
+
+0.3 released august 1999
+----------------------------
+
+* predefined colors in Colors management
+* add WCENTRED options
+
+1.0 beta released september 1999
+----------------------------
+
+* new file format
+* support for all new features of OpenGUI
+* many bug fixes
+* totally rewrited 'item properties window'
+* many accelerated keys added
+* added granularity for better 'by hand' item movement with mouse
+* some code for bitmaps - no functionally still
+
+############# THIS IS a FIRST RELEASE for REAL WORK ########################
+
+1.4 to 1.5 released october 1999 - approx. 50 hours of hard work
+----------------------------
+* too many minor improvements for list here
+* added comments to generated source
+* added default values for variables
+* bitmaps works fine now
+* many improvements to code generator
+* add testmode
+* add color scheme support
+* add clocks
+
+1.5 to 1.7 released november 1999
+----------------------------
+* changes to corespondent with new OpenGUI features
+* some minor bugfixes
+
+1.72 released december 1999
+----------------------------
+* added support for ButtonGroup(int)
+* fixed small bug in ColorScheme polution
+
+2.10 released february 2000
+----------------------------
+* added support for ellipses, arcs
+* added suport for GIF files
+* added Bitmap Manager
+
+3.1 released february 2001
+----------------------------
+* fixed crash when two and more forms are created
+* fixed crash 'Save As'
+* fixed some draw artefacts when forms are out of screen
+
+4.93 released 04/2004
+----------------------------
+* removed FGBitmap support
